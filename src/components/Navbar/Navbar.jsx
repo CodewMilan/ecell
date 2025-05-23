@@ -37,8 +37,8 @@ const FloatingNav = () => {
     <>
       {/* Floating Navigation */}
       <nav className={`text-white fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 ease-in-out ${
-        isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
-      }`}>
+        isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 ' 
+      }`} style={{ fontFamily: 'Sora, sans-serif' }}>
         {/* Desktop Navigation */}
      <div className="hidden md:flex items-center bg-black px-6 py-3 shadow-lg border border-gray-800 font-sora">
   {/* Placeholder Logo */}
