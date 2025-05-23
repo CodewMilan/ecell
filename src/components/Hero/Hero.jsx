@@ -221,7 +221,7 @@ const renderCardContent = (card) => {
               animationStage >= 2 ? 'translate-x-0 opacity-100' : '-translate-x-24 opacity-0'
             }`}>
               <h1 className="text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
-                E- <br />CELL
+              E-CELL
               </h1>
             </div>
             
