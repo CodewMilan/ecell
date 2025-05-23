@@ -222,8 +222,8 @@ const renderCardContent = (card) => {
               animationStage >= 2 ? 'translate-x-0 opacity-100' : '-translate-x-24 opacity-0'
             }`}>
               <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight" style={{ fontFamily: 'Sora, serif' }}>
-                <span className="italic font-bold">INNOVATE</span><br />
                 <span className="italic font-bold">IDEATE</span><br />
+                <span className="italic font-bold">INNOVATE</span><br />
                 <span className="italic font-bold">INSPIRE</span>
               </h1>
             </div>

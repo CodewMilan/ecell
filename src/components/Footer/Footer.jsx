@@ -98,22 +98,22 @@ const Footer = () => {
                   <MapPin className="w-5 h-5 text-orange-500 mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-gray-300">
-                      Innovation Center, Block A<br />
-                      Your College Campus<br />
-                      City, State - 123456
+                      BMS institute of Technology, Lab block
+                      <br />
+                      Bengaluru, Karnataka-560064
                     </p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="w-5 h-5 text-orange-500 flex-shrink-0" />
                   <a href="tel:+1234567890" className="text-gray-300 hover:text-orange-500 transition-colors duration-300">
-                    +91 98765 43210
+                    +91 88671 62414, Maxson
                   </a>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-orange-500 flex-shrink-0" />
                   <a href="mailto:contact@ecell.college.edu" className="text-gray-300 hover:text-orange-500 transition-colors duration-300">
-                    contact@ecell.college.edu
+                    ecell@bmsit.in
                   </a>
                 </div>
               </div>
@@ -128,7 +128,7 @@ const Footer = () => {
             <div className="flex flex-col md:flex-row items-center justify-between">
               <div className="text-center md:text-left mb-4 md:mb-0">
                 <p className="text-gray-400" style={{ fontFamily: 'Sora, sans-serif' }}>
-                  © 2024 E-Cell. All rights reserved. | 
+                  © 2025 E-Cell. All rights reserved. | 
                   <a href="#" className="text-orange-500 hover:text-orange-400 ml-1">Privacy Policy</a> | 
                   <a href="#" className="text-orange-500 hover:text-orange-400 ml-1">Terms of Service</a>
                 </p>
