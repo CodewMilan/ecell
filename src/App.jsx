@@ -2,6 +2,7 @@ import { useState, useEffect, createContext } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Alumni from './pages/Alumni';
+import Gallery from './pages/Gallery';
 // import EventDetails from './pages/EventDetails';
 import Team from './pages/Team';
 import Preloader from './components/Preloader/Preloader';
@@ -33,7 +34,9 @@ function App() {
              {/* <Route path="/events/:eventId" element={<EventDetails />} /> */}
             <Route path="/alumni" element={<Alumni />} /> 
 
-             <Route path="/team" element={<Team />} /> 
+             <Route path="/team" element={<Team />} />
+            
+             <Route path="/gallery" element={<Gallery/>} />
           </Routes>
         </Router>
       )}

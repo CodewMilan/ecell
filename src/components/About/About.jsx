@@ -46,7 +46,7 @@ const AboutSection = () => {
   return (
     <>
       
-      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
       
       <div className="bg-white min-h-screen relative overflow-hidden flex items-center justify-center" ref={sectionRef}>
         <style jsx global>{`
@@ -130,7 +130,7 @@ const AboutSection = () => {
                 className="absolute inset-0 flex items-center justify-center opacity-4 pointer-events-none"
                 style={{ transform: `translateY(${parallaxOffset * 0.5}px)` }}
               >
-                <h1 className="text-[12rem] md:text-[16rem] lg:text-[20rem] font-black text-gray-900 select-none" style={{ fontFamily: 'Playfair Display, serif' }}>
+                <h1 className="text-[12rem] md:text-[16rem] lg:text-[20rem] font-black text-gray-900 select-none" style={{ fontFamily: 'Georgia, serif' }}>
                   ABOUT
                 </h1>
               </div>
@@ -138,7 +138,7 @@ const AboutSection = () => {
               
               <div className="relative z-10 pt-8">
            
-                <p className="text-xs md:text-sm font-medium tracking-[0.4em] text-gray-500 mb-8 uppercase" style={{ fontFamily: 'Inter, sans-serif' }}>
+                <p className="text-xs md:text-sm font-medium tracking-[0.4em] text-gray-500 mb-8 uppercase" style={{ fontFamily: 'Sora, sans-serif' }}>
                   Empowering Innovation
                 </p>
                 
@@ -159,15 +159,15 @@ const AboutSection = () => {
             
             
             <div className="max-w-4xl mx-auto space-y-8">
-              <p className="text-xl md:text-2xl lg:text-3xl text-gray-700 leading-relaxed-custom font-light letter-spacing-wider" style={{ fontFamily: 'Inter, sans-serif' }}>
+              <p className="text-xl md:text-2xl lg:text-3xl text-gray-700 leading-relaxed-custom font-light letter-spacing-wider" style={{ fontFamily: 'Sora, sans-serif' }}>
                 E-Cell is a dynamic entrepreneurship community dedicated to fostering innovation and nurturing the next generation of business leaders.
               </p>
               
-              <p className="text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed-custom font-light letter-spacing-wider" style={{ fontFamily: 'Inter, sans-serif' }}>
+              <p className="text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed-custom font-light letter-spacing-wider" style={{ fontFamily: 'Sora, sans-serif' }}>
                 We provide comprehensive support, resources, and mentorship to transform groundbreaking ideas into successful ventures.
               </p>
               
-              <p className="text-base md:text-lg lg:text-xl text-gray-500 leading-relaxed-custom font-light letter-spacing-wider max-w-3xl mx-auto" style={{ fontFamily: 'Inter, sans-serif' }}>
+              <p className="text-base md:text-lg lg:text-xl text-gray-500 leading-relaxed-custom font-light letter-spacing-wider max-w-3xl mx-auto" style={{ fontFamily: 'sora, sans-serif' }}>
                 Our mission extends beyond traditional business education—we create an ecosystem where creativity meets strategy, where ambitious minds collaborate, and where startup dreams become reality.
               </p>
             </div>

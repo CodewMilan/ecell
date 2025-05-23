@@ -16,7 +16,7 @@ const ECellEventsScroll = () => {
     { name: "Rip Off", path: "/rip-off" }
   ];
 
-
+  // Duplicate events for infinite scroll effect
   const extendedEvents = [...events, ...events, ...events];
 
   useEffect(() => {
@@ -100,7 +100,7 @@ const ECellEventsScroll = () => {
               }
               
               body { 
-                font-family: 'Inter', sans-serif; 
+                font-family: 'Sora', sans-serif; 
                 background: #000000;
                 color: white;
                 min-height: 100vh;
