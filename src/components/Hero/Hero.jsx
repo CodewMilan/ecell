@@ -220,8 +220,8 @@ const renderCardContent = (card) => {
             <div className={`text-left transform transition-all duration-2000 ease-out ${
               animationStage >= 2 ? 'translate-x-0 opacity-100' : '-translate-x-24 opacity-0'
             }`}>
-              <h1 className="text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
-              E-CELL
+              <h1 className="text-2xl lg:text-2xl xl:text-2xl font-bold text-white leading-tight" style={{ fontFamily: 'Georgia, serif', fontSize:"30px"}}>
+              ENTREPRENEURSHIP <br /><div className='text-center'>CELL</div>
               </h1>
             </div>
             
