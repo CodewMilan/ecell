@@ -53,15 +53,23 @@ const Footer = () => {
                 Empowering the next generation of entrepreneurs through innovation, mentorship, and cutting-edge resources.
               </p>
               <div className="flex space-x-4">
-                {[Facebook, Twitter, Instagram, Linkedin, Youtube].map((Icon, index) => (
-                  <a
-                    key={index}
-                    href="#"
-                    className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors duration-300 group"
-                  >
-                    <Icon className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors duration-300" />
-                  </a>
-                ))}
+              <div className="flex space-x-4">
+  {[
+    { Icon: Instagram, url: "https://www.instagram.com/ecell.bmsit?igsh=MW5ldWh3YXVtNGNndA==" },
+    { Icon: Linkedin, url: "https://www.linkedin.com/in/ecellbmsit" }
+  ].map(({ Icon, url }, index) => (
+    <a
+      key={index}
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors duration-300 group"
+    >
+      <Icon className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors duration-300" />
+    </a>
+  ))}
+</div>
+
               </div>
             </div>
 
@@ -83,24 +91,8 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Events & Programs */}
-            <div>
-              <h4 className="text-lg font-semibold mb-6 text-orange-500 flex items-center" style={{ fontFamily: 'Georgia, serif' }}>
-                <Calendar className="w-5 h-5 mr-2" />
-                Events & Programs
-              </h4>
-              <ul className="space-y-3" style={{ fontFamily: 'Sora, sans-serif' }}>
-                {['Startup Bootcamp', 'Pitch Competitions', 'Networking Events', 'Workshops', 'Hackathons', 'Guest Lectures'].map((event) => (
-                  <li key={event}>
-                    <a href="#" className="text-gray-300 hover:text-orange-500 transition-colors duration-300 flex items-center group">
-                      <span className="w-2 h-2 bg-orange-500 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                      {event}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
+          
+                <div className='flex flex-row justify-center items-center'>
             {/* Contact Info */}
             <div>
               <h4 className="text-lg font-semibold mb-6 text-orange-500 flex items-center" style={{ fontFamily: 'Georgia, serif' }}>
@@ -133,6 +125,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
+        </div>
         </div>
 
         {/* Newsletter Section */}
