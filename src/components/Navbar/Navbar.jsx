@@ -9,9 +9,9 @@ const FloatingNav = () => {
   const navItems = [
     { name: 'Home', href: '#home' },
     { name: 'Events', href: '#timeline' },
-    { name: 'Gallery', href: '#leaderboard' },
-    { name: 'Failure Story', href: '#dashboard' },
-    { name: 'Team', href: '#team' }
+    { name: 'Gallery', href: '/gallery' },
+    { name: 'Failure Story', href: '#failurestory' },
+    { name: 'Team', href: '/team' }
   ];
 
   useEffect(() => {
