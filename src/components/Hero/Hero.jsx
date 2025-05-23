@@ -172,7 +172,31 @@ const renderCardContent = (card) => {
         />
       </motion.div>
 
-      
+    {/* Logos Section - responsive positioning */}
+<nav className="flex justify-between items-center px-4 lg:px-8 pt-4">
+  {/* Left: Logo 1 & Logo 2 - always visible */}
+  <div className="flex gap-4 items-center">
+    <img src="https://via.placeholder.com/50x50?text=Logo+1" alt="Logo 1" className="h-10 w-auto" />
+    <img src="https://via.placeholder.com/50x50?text=Logo+2" alt="Logo 2" className="h-10 w-auto" />
+    
+    {/* Logo 3 (mobile only) */}
+    <img
+      src="https://via.placeholder.com/50x50?text=Logo+3"
+      alt="Logo 3"
+      className="h-10 w-auto lg:hidden"
+    />
+  </div>
+
+  {/* Right: Logo 3 (desktop only) */}
+  <div className="hidden lg:block">
+    <img
+      src="https://via.placeholder.com/50x50?text=Logo+3"
+      alt="Logo 3"
+      className="h-10 w-auto"
+    />
+  </div>
+</nav>
+
        <div className="flex items-center justify-center min-h-screen relative px-4 pt-20 pb-8 z-10">
         
         {/* Initial Animation - "WE ARE ENTREPRENEURSHIP CELL" */}

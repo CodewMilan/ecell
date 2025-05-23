@@ -129,29 +129,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom section */}
-        <div className="flex flex-col md:flex-row items-center justify-between pt-12 mt-16 border-t border-white/10">
-          <div className="flex flex-col md:flex-row items-center gap-6 mb-6 md:mb-0">
-            <p className="text-gray-400 text-sm">
-              © 2025 E-Cell BMSIT. All rights reserved.
-            </p>
-            <div className="flex items-center gap-6">
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors duration-300">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors duration-300">
-                Terms of Service
-              </a>
-            </div>
-          </div>
-          
-          <button
-            onClick={scrollToTop}
-            className="group w-12 h-12 bg-white/10 hover:bg-orange-500 rounded-full flex items-center justify-center transition-all duration-300 border border-white/20 hover:border-orange-500"
-            aria-label="Scroll to top"
-          >
-            <ArrowUp className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors duration-300" />
-          </button>
-        </div>
+      
       </div>
     </footer>
   );
