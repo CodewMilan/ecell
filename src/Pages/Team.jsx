@@ -20,6 +20,7 @@ import hitesh from './assets/team/hitesh.jpeg';
 import tirth from './assets/team/tirth.jpg';
 import fardeen from './assets/team/fardeen.jpeg';
 import shriya from './assets/team/shriya.jpg';
+import nishitha from './assets/team/nishitha.jpeg'
 
 const ECellTeamPage = () => {
   const [hoveredMember, setHoveredMember] = useState(null);
@@ -64,7 +65,7 @@ const ECellTeamPage = () => {
         id: 'vp2',
         name: 'Nishitha Bodipati',
         position: 'Vice President',
-        image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop&crop=face',
+        image: nishitha,
         bio: 'Strategic planning and business development',
         linkedin: '#',
         email: 'vp2@ecell.com'
