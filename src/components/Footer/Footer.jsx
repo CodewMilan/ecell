@@ -36,23 +36,16 @@ const Footer = () => {
             
             {/* Brand Section */}
             <div className="lg:col-span-1">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mr-4">
-                  <Lightbulb className="w-6 h-6 text-white" />
+              
+                
+                <div className='flex justify-center items-center'>
+                  <img src="./src/assets/ecellor.png" alt="" srcset="" width={120} height={120} />
                 </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-orange-500" style={{ fontFamily: 'Georgia, serif' }}>
-                    E-Cell
-                  </h3>
-                  <p className="text-sm text-gray-400" style={{ fontFamily: 'Sora, sans-serif' }}>
-                    Innovation Hub
-                  </p>
-                </div>
-              </div>
+              
               <p className="text-gray-300 mb-6 leading-relaxed" style={{ fontFamily: 'Sora, sans-serif' }}>
                 Empowering the next generation of entrepreneurs through innovation, mentorship, and cutting-edge resources.
               </p>
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 justify-center items-center">
               <div className="flex space-x-4">
   {[
     { Icon: Instagram, url: "https://www.instagram.com/ecell.bmsit?igsh=MW5ldWh3YXVtNGNndA==" },
