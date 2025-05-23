@@ -8,10 +8,9 @@ const FloatingNav = () => {
 
   const navItems = [
     { name: 'Home', href: '#home' },
-    { name: 'Timeline', href: '#timeline' },
-    { name: 'LeaderBoard', href: '#leaderboard' },
-    { name: 'Repos', href: '#repos' },
-    { name: 'Dashboard', href: '#dashboard' },
+    { name: 'Events', href: '#timeline' },
+    { name: 'Gallery', href: '#leaderboard' },
+    { name: 'Failure Story', href: '#dashboard' },
     { name: 'Team', href: '#team' }
   ];
 
@@ -43,8 +42,8 @@ const FloatingNav = () => {
         {/* Desktop Navigation */}
      <div className="hidden md:flex items-center bg-black px-6 py-3 shadow-lg border border-gray-800 font-sora">
   {/* Placeholder Logo */}
-  <div className="flex items-center mr-8 text-white font-bold text-sm">
-    🚀 LOGO
+  <div className="flex items-center mr-8 text-white font-bold text-sm justify-center">
+    <img src="./src/assets/ecellor.png" alt="" width={40} height={40}/>
   </div>
 
   {/* Navigation Links */}
