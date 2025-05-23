@@ -173,9 +173,9 @@ const renderCardContent = (card) => {
       </motion.div>
 
       
-      <div className="flex items-center justify-center min-h-screen relative px-4 pt-20 pb-8 z-10">
+       <div className="flex items-center justify-center min-h-screen relative px-4 pt-20 pb-8 z-10">
         
-        
+        {/* Initial Animation - "WE ARE ENTREPRENEURSHIP CELL" */}
         <div className={`absolute inset-0 flex items-center justify-center transition-all duration-1500 ease-out ${
           animationStage === 1 ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
         } ${animationStage >= 2 ? 'opacity-0 pointer-events-none scale-110' : ''}`}>
@@ -189,48 +189,51 @@ const renderCardContent = (card) => {
           </div>
         </div>
 
-       
+        {/* Main Layout */}
         <div className={`w-full transition-all duration-2000 ease-out ${
           animationStage >= 2 ? 'opacity-100' : 'opacity-0'
         } ${animationStage < 2 ? 'pointer-events-none' : ''}`}>
           
-          
-          <div className="hidden lg:flex items-center justify-center gap-12 xl:gap-16">
+          {/* Desktop Layout */}
+          <div className="hidden lg:flex items-center justify-center gap-16 xl:gap-20 2xl:gap-24">
             
-       
+            {/* Left Text */}
             <div className={`text-right transform transition-all duration-2000 ease-out ${
               animationStage >= 2 ? 'translate-x-0 opacity-100' : 'translate-x-24 opacity-0'
             }`}>
-              <h1 className="text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
+              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight" style={{ fontFamily: 'Sora, serif' }}>
                 WE<br />
-                <span className="italic font-light">ARE</span>
+                <span className="italic font-light">ARE</span><br />
+                <span className="text-4xl lg:text-5xl xl:text-6xl">E-CELL</span>
               </h1>
             </div>
             
-       
+            {/* Center Cards - Balanced Size */}
             <div className={`relative flex-shrink-0 transform transition-all duration-1500 ease-out ${
               animationStage >= 2 ? 'scale-100 opacity-100 rotate-0' : 'scale-75 opacity-0 rotate-12'
             }`} style={{ transitionDelay: '300ms' }}>
-              <div className="relative w-64 h-80 xl:w-72 xl:h-88">
+              <div className="relative w-72 h-88 xl:w-80 xl:h-96">
                 {cardConfig.map((_, index) => renderCard(index, false))}
               </div>
             </div>
             
-           
+            {/* Right Text */}
             <div className={`text-left transform transition-all duration-2000 ease-out ${
               animationStage >= 2 ? 'translate-x-0 opacity-100' : '-translate-x-24 opacity-0'
             }`}>
-              <h1 className="text-2xl lg:text-2xl xl:text-2xl font-bold text-white leading-tight" style={{ fontFamily: 'Georgia, serif', fontSize:"30px"}}>
-              ENTREPRENEURSHIP <br /><div className='text-center'>CELL</div>
+              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight" style={{ fontFamily: 'Sora, serif' }}>
+                <span className="italic font-bold">INNOVATE</span><br />
+                <span className="italic font-bold">IDEATE</span><br />
+                <span className="italic font-bold">INSPIRE</span>
               </h1>
             </div>
             
           </div>
           
-       
+          {/* Mobile Layout */}
           <div className="lg:hidden flex flex-col items-center justify-center text-center space-y-8">
             
-           
+            {/* Mobile Text */}
             <div className={`transform transition-all duration-2000 ease-out ${
               animationStage >= 2 ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
             }`}>
@@ -240,22 +243,22 @@ const renderCardContent = (card) => {
               </h1>
             </div>
             
-           
+            {/* Mobile Cards - Balanced Size */}
             <div className={`relative flex-shrink-0 transform transition-all duration-1500 ease-out ${
               animationStage >= 2 ? 'scale-100 opacity-100 rotate-0' : 'scale-75 opacity-0 rotate-12'
             }`} style={{ transitionDelay: '400ms' }}>
-              <div className="relative w-48 h-60 sm:w-56 sm:h-72">
+              <div className="relative w-52 h-68 sm:w-56 sm:h-72">
                 {cardConfig.map((_, index) => renderCard(index, true))}
               </div>
             </div>
             
           </div>
           
-      
+          {/* Description Text */}
           <div className={`mt-12 lg:mt-16 max-w-4xl mx-auto text-center transition-all duration-1500 ease-out ${
             animationStage >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
           }`} style={{ transitionDelay: '800ms' }}>
-            <p className="text-gray-300 text-base sm:text-lg lg:text-xl leading-relaxed px-4">
+            <p className="text-gray-300 text-base sm:text-lg lg:text-xl leading-relaxed px-4" style={{ fontFamily: 'Sora, serif' }}>
               Empowering the next generation of innovators and entrepreneurs,<br className="hidden sm:inline" />
               fostering creativity, leadership, and entrepreneurial mindset<br className="hidden sm:inline" />
               to build tomorrow's game-changing ventures.
