@@ -9,7 +9,7 @@ import syeeda from "./assets/syeeda.jpg";
 import adithya from "./assets/adithya.jpg";
 import gul from "./assets/gul.jpeg";
 import sarvani from "./assets/sarvani.jpg";
-
+import Footer from '../components/Footer/Footer';
 const EcellAlumniPage = () => {
   const [visibleCards, setVisibleCards] = useState(new Set());
   const [hoveredCard, setHoveredCard] = useState(null);
@@ -312,20 +312,8 @@ const EcellAlumniPage = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-20 px-6 border-t border-gray-800 relative">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="text-3xl lg:text-4xl font-bold mb-6 font-serif">
-            E-<span className="text-[#FD7722]">CELL</span>
-          </div>
-          <p className="text-gray-400 text-lg font-sans">
-            Empowering the next generation of entrepreneurs
-          </p>
-          
-          {/* Decorative elements */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-32 h-0.5 bg-gradient-to-r from-transparent via-[#FD7722] to-transparent"></div>
-        </div>
-      </footer>
+  
+      <Footer/>
 
       {/* Custom CSS for animations */}
       <style jsx>{`

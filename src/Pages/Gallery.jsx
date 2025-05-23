@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import Navbar from '../components/Navbar/Navbar';
+import Footer from '../components/Footer/Footer';
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   
@@ -371,6 +372,7 @@ const Gallery = () => {
             </div>
           </div>
         )}
+        <Footer />
       </div>
     </>
   );
