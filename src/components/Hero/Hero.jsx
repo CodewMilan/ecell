@@ -109,7 +109,7 @@ const renderCardContent = (card) => {
   };
 
   return (
-      <div className="min-h-screen bg-black relative overflow-hidden">
+      <div className="min-h-screen bg-black relative overflow-hidden" >
     
       <motion.div 
         animate={{ 

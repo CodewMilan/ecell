@@ -7,11 +7,12 @@ const FloatingNav = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Events', href: '#timeline' },
+    { name: 'Home', href: '/' },
+    { name: 'Events', href: '#events' },
     { name: 'Gallery', href: '/gallery' },
     { name: 'Failure Story', href: '#failurestory' },
-    { name: 'Team', href: '/team' }
+    { name: 'Team', href: '/team' },
+    { name: 'Alumni', href: '/alumni' }
   ];
 
   useEffect(() => {

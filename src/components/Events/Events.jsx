@@ -276,7 +276,7 @@ const ECellEventsScroll = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-hidden relative">
+    <div className="min-h-screen bg-black text-white overflow-hidden relative" style={{ fontFamily: 'Sora, sans-serif' }} id='events'>
       {/* Google Fonts */}
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 

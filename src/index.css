@@ -17,7 +17,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.html{
+  scroll-behavior: smooth;
+}
 a {
   font-weight: 500;
   text-decoration: inherit;
@@ -38,6 +40,7 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
+
 
 button {
   border-radius: 8px;
