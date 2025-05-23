@@ -35,7 +35,7 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             
             {/* Brand Section */}
-            <div></div>
+            
             <div className="lg:col-span-1">
               
                 
@@ -122,34 +122,7 @@ const Footer = () => {
         </div>
         </div>
 
-        {/* Newsletter Section */}
-        <div className="border-t border-gray-800">
-          <div className="max-w-7xl mx-auto px-6 py-8">
-            <div className="flex flex-col md:flex-row items-center justify-between">
-              <div className="mb-6 md:mb-0">
-                <h5 className="text-xl font-semibold text-white mb-2" style={{ fontFamily: 'Georgia, serif' }}>
-                  Stay Updated
-                </h5>
-                <p className="text-gray-400" style={{ fontFamily: 'Sora, sans-serif' }}>
-                  Subscribe to our newsletter for the latest updates and opportunities
-                </p>
-              </div>
-              <div className="flex w-full md:w-auto">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 md:w-80 px-4 py-3 bg-gray-800 text-white rounded-l-lg border border-gray-700 focus:outline-none focus:border-orange-500 transition-colors duration-300"
-                  style={{ fontFamily: 'Sora, sans-serif' }}
-                />
-                <button className="px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-r-lg hover:from-orange-600 hover:to-orange-700 transition-all duration-300 transform hover:scale-105">
-                  Subscribe
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Bar */}
+      {/* Bottom Bar */}
         <div className="border-t border-gray-800">
           <div className="max-w-7xl mx-auto px-6 py-6">
             <div className="flex flex-col md:flex-row items-center justify-between">
