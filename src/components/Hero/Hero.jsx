@@ -109,27 +109,27 @@ const renderCardContent = (card) => {
   };
 
   return (
-      <div className="min-h-screen bg-black relative overflow-hidden" >
+      <div className="min-h-screen bg-black lg:bg-transparent relative overflow-hidden" >
     
-      <motion.div 
-        animate={{ 
-          scale: [1, 1.15, 1], 
-          x: [0, 10, -10, 0], 
-          y: [0, -10, 10, 0] 
-        }} 
-        transition={{ 
-          duration: 15, 
-          repeat: Infinity, 
-          ease: "easeInOut" 
-        }} 
-        className="absolute inset-0 w-full h-full bg-cover bg-center bg-gradient-to-br from-gray-900 via-black to-gray-900"
-        style={{ 
-          backgroundImage: `url(${bgimage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
+{/* Desktop Background - Hidden on Mobile */}
+<motion.div 
+  animate={{ 
+    x: [0, 5, -5, 0],     
+    y: [0, -5, 5, 0]      
+  }} 
+  transition={{ 
+    duration: 15, 
+    repeat: Infinity, 
+    ease: "easeInOut" 
+  }} 
+  className="hidden lg:block absolute inset-0 w-full h-full bg-cover bg-center bg-gradient-to-br from-gray-900 via-black to-gray-900"
+  style={{ 
+    backgroundImage: `url(${bgimage})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat'
+  }}
+>
         <div className="absolute inset-0 bg-black/40" />
         <motion.div 
           className="absolute w-40 h-40 bg-white/10 rounded-full blur-3xl top-1/3 left-1/4" 
@@ -180,7 +180,7 @@ const renderCardContent = (card) => {
           animationStage === 1 ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
         } ${animationStage >= 2 ? 'opacity-0 pointer-events-none scale-110' : ''}`}>
           <div className="text-center">
-            <h1 className="text-5xl sm:text-6xl lg:text-8xl xl:text-9xl font-bold text-white leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
+            <h1 className="text-5xl sm:text-6xl lg:text-8xl xl:text-9xl font-bold text-white leading-tight" style={{ fontFamily: 'Sora, sans-serif' }}>
               WE ARE<br />
               <span className="italic font-light">ENTREPRENEURSHIP</span><br />
               <span className="hidden sm:inline">CELL</span>
@@ -201,7 +201,7 @@ const renderCardContent = (card) => {
             <div className={`text-right transform transition-all duration-2000 ease-out ${
               animationStage >= 2 ? 'translate-x-0 opacity-100' : 'translate-x-24 opacity-0'
             }`}>
-              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight" style={{ fontFamily: 'Sora, serif' }}>
+              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight" style={{ fontFamily: 'Sora, sans-serif' }}>
                 WE<br />
                 <span className="italic font-light">ARE</span><br />
                 <span className="text-4xl lg:text-5xl xl:text-6xl">E-CELL</span>
@@ -221,7 +221,7 @@ const renderCardContent = (card) => {
             <div className={`text-left transform transition-all duration-2000 ease-out ${
               animationStage >= 2 ? 'translate-x-0 opacity-100' : '-translate-x-24 opacity-0'
             }`}>
-              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight" style={{ fontFamily: 'Sora, serif' }}>
+              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight" style={{ fontFamily: 'Sora, sans-serif' }}>
                 <span className="italic font-bold">IDEATE</span><br />
                 <span className="italic font-bold">INNOVATE</span><br />
                 <span className="italic font-bold">INSPIRE</span>
@@ -230,35 +230,38 @@ const renderCardContent = (card) => {
             
           </div>
           
-          {/* Mobile Layout */}
+          {/* Mobile Layout - Centered */}
           <div className="lg:hidden flex flex-col items-center justify-center text-center space-y-8">
             
-            {/* Mobile Text */}
+            {/* Mobile Text - Centered */}
             <div className={`transform transition-all duration-2000 ease-out ${
               animationStage >= 2 ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
             }`}>
-              <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
+              <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight text-center" style={{ fontFamily: 'Sora, sans-serif' }}>
                 WE ARE<br />
                 <span className="italic font-light">E-CELL</span>
               </h1>
             </div>
             
-            {/* Mobile Cards - Balanced Size */}
+            {/* Mobile Cards - Centered */}
             <div className={`relative flex-shrink-0 transform transition-all duration-1500 ease-out ${
               animationStage >= 2 ? 'scale-100 opacity-100 rotate-0' : 'scale-75 opacity-0 rotate-12'
             }`} style={{ transitionDelay: '400ms' }}>
-              <div className="relative w-52 h-68 sm:w-56 sm:h-72">
+              <div className="relative w-52 h-68 sm:w-56 sm:h-72 mx-auto">
                 {cardConfig.map((_, index) => renderCard(index, true))}
               </div>
             </div>
             
+            {/* Mobile Additional Text - Centered */}
+          
+            
           </div>
           
-          {/* Description Text */}
+          {/* Description Text - Centered */}
           <div className={`mt-12 lg:mt-16 max-w-4xl mx-auto text-center transition-all duration-1500 ease-out ${
             animationStage >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
           }`} style={{ transitionDelay: '800ms' }}>
-            <p className="text-gray-300 text-base sm:text-lg lg:text-xl leading-relaxed px-4" style={{ fontFamily: 'Sora, serif' }}>
+            <p className="text-gray-300 text-base sm:text-lg lg:text-xl leading-relaxed px-4 text-center" style={{ fontFamily: 'Sora, sans-serif' }}>
               Empowering the next generation of innovators and entrepreneurs,<br className="hidden sm:inline" />
               fostering creativity, leadership, and entrepreneurial mindset<br className="hidden sm:inline" />
               to build tomorrow's game-changing ventures.
@@ -268,31 +271,7 @@ const renderCardContent = (card) => {
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes backgroundFloat {
-          0%, 100% { transform: scale(1.15) translate(0, 0); }
-          33% { transform: scale(1.15) translate(10px, -10px); }
-          66% { transform: scale(1.15) translate(-10px, 10px); }
-        }
-        
-        @keyframes float1 {
-          0%, 100% { transform: translate(0, 0); }
-          33% { transform: translate(20px, -10px); }
-          66% { transform: translate(-20px, 10px); }
-        }
-        
-        @keyframes float2 {
-          0%, 100% { transform: translate(0, 0); }
-          33% { transform: translate(-15px, 15px); }
-          66% { transform: translate(15px, -15px); }
-        }
-        
-        @keyframes float3 {
-          0%, 100% { transform: translate(0, 0); }
-          33% { transform: translate(25px, -20px); }
-          66% { transform: translate(-25px, 20px); }
-        }
-      `}</style>
+     
     </div>
   );
 };

@@ -48,8 +48,8 @@ const Preloader = ({ onComplete }) => {
             animate={{
               opacity: [0, 1, 0],
               scale: [0, 1, 0],
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x: `${Math.random() * 100}vw`,
+              y: `${Math.random() * 100}vh`,
             }}
             transition={{
               repeat: Infinity,
@@ -62,7 +62,7 @@ const Preloader = ({ onComplete }) => {
 
       {/* Rocket */}
       <motion.svg
-        className="w-24 h-24 mb-8"
+        className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mb-8"
         viewBox="0 0 64 64"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -88,7 +88,7 @@ const Preloader = ({ onComplete }) => {
       <AnimatePresence mode="wait">
         <motion.h1
           key={wordIndex}
-          className="text-4xl font-bold tracking-wider mb-4"
+          className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-wider mb-4 text-center px-4"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}

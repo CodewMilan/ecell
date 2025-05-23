@@ -26,6 +26,7 @@ import nishitha from './assets/team/nishitha.jpeg'
 import milan from './assets/team/milan.jpg';
 import akhilesh from './assets/team/akhilesh.jpeg';
 import bhanu from './assets/team/bhanu.JPG';
+import raashi from './assets/team/raashi.jpg';
 import ananya from './assets/team/ananya.jpg';
 
 const ECellTeamPage = () => {
@@ -127,6 +128,26 @@ const ECellTeamPage = () => {
         position: 'Media Associate',
         image: ananya
       },
+        {
+        name: 'Bhavana',
+        position: 'Marketing Associate',
+        image: 'https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=300&h=400&fit=crop&crop=face'
+      },
+      {
+        name: 'Dhyeya',
+        position: 'Operations Associate',
+        image: Dhyeya
+      },
+       {
+        name: 'Divyashree',
+        position: 'Operations Associate',
+        image: divyashree
+      },
+       {
+        name: 'Jasvanti',
+        position: 'Design Associate',
+        image: jasvanti
+      },
       {
         name: 'Krishna',
         position: 'Marketing Associate',
@@ -137,30 +158,27 @@ const ECellTeamPage = () => {
         position: 'Corporate Relations Associate',
         image: parathana
       },
-      {
-        name: 'Divyashree',
-        position: 'Operations Associate',
-        image: divyashree
+     
+     {
+        name: 'Ansu Kumar',
+        position: 'Tech Associate',
+        image: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=300&h=400&fit=crop&crop=face'
       },
-      {
-        name: 'Jasvanti',
-        position: 'Design Associate',
-        image: jasvanti
-      },
-      {
-        name: 'Dhyeya',
-        position: 'Operations Associate',
-        image: Dhyeya
-      },
-      {
-        name: 'Bhavana',
-        position: 'Marketing Associate',
-        image: 'https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=300&h=400&fit=crop&crop=face'
-      },
+    
       {
         name: 'Arush',
         position: 'Corporate Relations Associate',
         image: arush
+      },
+      {
+        name: 'Ashutosh',
+        position: 'Content Associate',
+        image: ashutosh
+      },
+      {
+        name: 'Deepthi Jain',
+        position: 'Event & Ops Associate',
+        image: deepthijain
       },
       {
         name: 'Gagan HS',
@@ -168,40 +186,35 @@ const ECellTeamPage = () => {
         image: gaganhs
       },
       {
+        name: 'Jayakeerthi',
+        position: 'Content Associate',
+        image: jayakeerthi
+      },
+      {
         name: 'krish Jain',
         position: 'Tech Associate',
         image: krishjain
       },
-      {
-        name: 'James Wilson',
-        position: 'Technology Associate',
-        image: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=300&h=400&fit=crop&crop=face'
+       {
+        name: 'Manal',
+        position: 'Marketing Associate',
+        image: manal
       },
+      
       {
-        name: 'Jordan Smith',
+        name: 'Raashi',
         position: 'Design Associate',
-        image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=400&fit=crop&crop=face'
+        image: raashi
       },
       {
-        name: 'Lily Patel',
-        position: 'Content & Media Associate',
-        image: 'https://images.unsplash.com/photo-1494790108755-2616b612b1fd?w=300&h=400&fit=crop&crop=face'
-      },
-      {
-        name: 'Logan Anderson',
-        position: 'Content & Media Associate',
-        image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=400&fit=crop&crop=face'
-      },
-      {
-        name: 'Lucas Brown',
-        position: 'Event Management Associate',
-        image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=400&fit=crop&crop=face'
-      },
-      {
-        name: 'Maya Singh',
-        position: 'Technology Associate',
-        image: 'https://images.unsplash.com/photo-1494790108755-2616b612b1fd?w=300&h=400&fit=crop&crop=face'
+        name: 'Sathya Shivani',
+        position: 'Corporate Relations Associate',
+        image: sathyashivani
       }
+      
+     
+      
+      
     ]
   };
 
