@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-
+import logo from '../../assets/ecellor.png';
 const FloatingNav = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
- const navItems = [
-  { name: 'Home', href: '/' },
-  { name: 'Events', href: '/#events' }, 
-  { name: 'Failure Story', href: '/#failure-story' }, 
-  { name: 'Gallery', href: '/gallery' }, 
-  { name: 'Team', href: '/team' },
-  { name: 'Alumni', href: '/alumni' } 
-];
+const navItems = [
+    { name: 'Home', href: '/' },
+    { name: 'Events', href: '/#events' }, 
+    { name: 'Failure Story', href: '/#failure-story' }, 
+    { name: 'Gallery', href: '/gallery' }, 
+    { name: 'Team', href: '/team' },
+    { name: 'Alumni', href: '/alumni' } 
+  ];
 
   useEffect(() => {
     const controlNavbar = () => {
@@ -41,22 +41,36 @@ const FloatingNav = () => {
         isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0' 
       }`} style={{ fontFamily: 'Sora, sans-serif' }}>
         
-        {/* Desktop Navigation - Sharp & Compact */}
-        <div className="hidden md:flex items-center bg-gradient-to-r from-black/95 via-black/98 to-black/95 backdrop-blur-xl px-3 py-2 shadow-2xl border border-orange-500/40 rounded-full hover:border-orange-400/60 transition-all duration-300">
-          {/* Compact Logo */}
-          <div className="flex items-center mr-4 text-white font-bold">
-            <div className="w-8 h-8 bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700 rounded-full flex items-center justify-center shadow-lg border border-orange-400/30">
-              <span className="text-white font-bold text-sm">E</span>
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center bg-gradient-to-r from-black/95 via-black/98 to-black/95 backdrop-blur-xl px-4 py-3 shadow-2xl border border-orange-500/40 rounded-full hover:border-orange-400/60 transition-all duration-300">
+          
+          {/* Logo Section */}
+          <div className="flex items-center mr-6">
+            <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-orange-400/50 shadow-lg hover:border-orange-400/70 transition-all duration-300">
+              <img
+                src={logo}
+                alt="E-Cell Logo"
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  // Fallback if logo fails to load
+                  e.target.style.display = 'none';
+                  e.target.nextSibling.style.display = 'flex';
+                }}
+              />
+              <div className="w-full h-full bg-gradient-to-br from-orange-500 to-orange-600 rounded-full items-center justify-center text-white font-bold text-lg hidden">
+                E
+              </div>
             </div>
+            <span className="ml-3 text-white font-semibold text-lg tracking-wide">E-Cell</span>
           </div>
 
-          {/* Sharp Navigation Links */}
+          {/* Navigation Links */}
           <ul className="flex items-center space-x-1 text-white">
             {navItems.map((item, index) => (
               <li key={index}>
                 <a
                   href={item.href}
-                  className="text-white/90 hover:text-white transition-all duration-200 text-sm font-medium relative group px-3 py-1.5 rounded-full hover:bg-orange-500/10 border border-transparent hover:border-orange-500/30"
+                  className="text-white/90 hover:text-white transition-all duration-200 text-sm font-medium relative group px-4 py-2 rounded-full hover:bg-orange-500/10 border border-transparent hover:border-orange-500/30"
                 >
                   {item.name}
                   <span className="absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-orange-400 transition-all duration-200 group-hover:w-full rounded-full"></span>
@@ -67,7 +81,7 @@ const FloatingNav = () => {
         </div>
       </nav>
 
-      {/* Mobile Navigation Toggle - Fixed to Top Right */}
+      {/* Mobile Navigation Toggle */}
       <div className="md:hidden">
         <button
           onClick={toggleMobileMenu}
@@ -80,6 +94,9 @@ const FloatingNav = () => {
             {isMobileMenuOpen ? <X size={24} strokeWidth={2.5} /> : <Menu size={24} strokeWidth={2.5} />}
           </div>
         </button>
+
+        {/* Mobile Logo - Fixed Position */}
+        
       </div>
 
       {/* Mobile Menu Overlay */}
@@ -100,8 +117,19 @@ const FloatingNav = () => {
           {/* Mobile Menu Header */}
           <div className="p-6 border-b border-orange-500/30">
             <div className="flex items-center space-x-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700 rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-lg">E</span>
+              <div className="w-12 h-12 rounded-xl overflow-hidden border-2 border-orange-400/50 shadow-lg">
+                <img
+                  src={logo}
+                  alt="E-Cell Logo"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'flex';
+                  }}
+                />
+                <div className="w-full h-full bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700 rounded-xl items-center justify-center text-white font-bold text-xl hidden">
+                  E
+                </div>
               </div>
               <div>
                 <span className="text-white font-semibold text-xl">E-Cell</span>
@@ -139,8 +167,9 @@ const FloatingNav = () => {
           </div>
         </div>
       </div>
-    </>
+ </>
   );
 };
+
 
 export default FloatingNav;
