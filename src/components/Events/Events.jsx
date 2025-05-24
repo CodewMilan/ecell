@@ -7,13 +7,13 @@ const ECellEventsScroll = () => {
   const itemRefs = useRef([]);
   const navigate = useNavigate();
   const events = [
-    { name: "CodeRed", path: "/codered" },
-    { name: "Advert1.0", path: "/advert" },
-    { name: "Spl", path: "/spl" },
-    { name: "Case Crackers", path: "/case-crackers" },
-    { name: "Chitting", path: "/chitting" },
-    { name: "Panel Discussion", path: "/panel-discussion" },
-    { name: "Rip Off", path: "/rip-off" }
+    { name: "CODERED'25", path: "/codered" },
+    { name: "ADVERT1.0", path: "/advert" },
+    { name: "SPL", path: "/spl" },
+    { name: "CASE CRACKERS", path: "/case-crackers" },
+    { name: "CHITTING", path: "/chitting" },
+    { name: "PANEL DISCUSSION", path: "/panel-discussion" },
+    { name: "RIP OFF", path: "/rip-off" }
   ];
 
   // Duplicate events for infinite scroll effect
@@ -97,10 +97,10 @@ const ECellEventsScroll = () => {
   };
 
   const formatEventName = (name) => {
-    if (name === "Advert1.0") return ["Advert", "1.0"];
-    if (name === "Case Crackers") return ["Case", "Crackers"];
-    if (name === "Panel Discussion") return ["Panel", "Discussion"];
-    if (name === "Rip Off") return ["Rip", "Off"];
+    if (name === "Advert1.0") return ["ADVERT", "1.0"];
+    if (name === "Case Crackers") return ["CASE", "CRACKERS"];
+    if (name === "Panel Discussion") return ["PANEL", "DISCUSSION"];
+    if (name === "Rip Off") return ["RIP", "OFF"];
     return [name];
   };
 
@@ -177,7 +177,7 @@ const ECellEventsScroll = () => {
                   style={getItemStyles(index)}
                   onClick={() => handleEventClick(event, index % events.length)}
                 >
-                  <h3 className="text-3xl xl:text-4xl font-bold text-white hover:text-[#FD7722] transition-all duration-500 group-hover:scale-110" style={{ fontFamily: 'Inter, sans-serif' }}>
+                  <h3 className="text-3xl xl:text-4xl font-bold text-white hover:text-[#FD7722] transition-all duration-500 group-hover:scale-110" style={{ fontFamily: 'Sora, sans-serif' }}>
                     {event.name}
                   </h3>
                   <div className="mt-4 h-0.5 w-0 bg-[#FD7722] mx-auto group-hover:w-20 transition-all duration-500"></div>

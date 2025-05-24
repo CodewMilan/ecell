@@ -1,96 +1,111 @@
 import React from 'react';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Users, Trophy, Calendar, Clock } from 'lucide-react';
 import codered1 from "./assets/codered25/codered1.jpg";
 import codered2 from "./assets/codered25/codered2.jpg";
 import codered3 from "./assets/codered25/codered3.jpg";
 import codered4 from "./assets/codered25/codered4.jpg";
-const galleryImages = [ 
-    codered1,
-    codered2,
-    codered3,
-    codered4
-];
 
-const stats = [
-  { label: 'Participants', value: '500+' },
-  { label: 'Challenges', value: '10+' },
-  { label: 'Prize Pool', value: '₹1,00,000+' },
-];
+const CodeRed25 = () => {
+  const galleryImages = [codered1, codered2, codered3, codered4];
+  
+  const eventStats = [
+    { icon: Users, label: 'Total Participants', value: '247' },
+    { icon: Trophy, label: 'Winners', value: '3 Teams' },
+    { icon: Calendar, label: 'Event Date', value: 'Feb 15, 2025' },
+    { icon: Clock, label: 'Duration', value: '6 Hours' },
+  ];
 
-const Codered = () => {
+  const highlights = [
+    "🏆 Team 'ByteForce' secured first place with an innovative solution",
+    "💡 45+ creative algorithms were submitted across all challenges", 
+    "🎯 Record-breaking participation with 80+ teams competing",
+    "🔥 Live coding sessions that kept everyone on the edge"
+  ];
+
   return (
-    <div className="min-h-screen bg-black text-white" style={{ fontFamily: 'Sora, sans-serif' }}>
-    <div className="absolute top-6 left-6 z-10">
-        <a
-          href="/#events"
-          className="flex items-center gap-2 text-orange-400 hover:text-orange-500 transition-colors"
-        >
-          <ArrowLeft size={20} />
-          <span className="font-medium text-sm md:text-base">Back to Events</span>
-        </a>
-      </div>
-      {/* Hero Section */}
-      <div className="flex flex-col items-center justify-center px-6 pt-32 pb-16 text-center">
-      <Navbar />
-        <h1
-          className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-[#FD7722] to-orange-400 drop-shadow-lg"
-          style={{ fontFamily: 'Georgia, serif' }}
-        >
-          CODERED
-        </h1>
-        <p className="mt-6 text-lg md:text-xl max-w-3xl text-gray-300 leading-relaxed">
-          cODERED is a high-energy coding competition designed to test your logic, speed, and problem-solving skills. Experience the adrenaline of real-time challenges and claim your place among the best!
-        </p>
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-black text-white">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-orange-900/20 via-transparent to-transparent"></div>
+      
+      <div className="relative z-10" style={{ fontFamily: 'Sora, sans-serif' }}>
+        <Navbar />
+        
+        <div className="absolute top-6 left-6 z-20">
+          <a href="/#events" className="group flex items-center gap-2 text-orange-400 hover:text-orange-300 transition-all duration-300">
+            <ArrowLeft size={20} />
+            <span className="font-medium">Back to Events</span>
+          </a>
+        </div>
 
-      {/* Stats Section */}
-      <div className="flex flex-wrap justify-center gap-8 py-10 border-t border-gray-800 px-6">
-        {stats.map((stat) => (
-          <div key={stat.label} className="text-center">
-            <p className="text-4xl font-bold text-orange-400">{stat.value}</p>
-            <p className="text-gray-400 text-sm uppercase tracking-wide">{stat.label}</p>
+        {/* Hero Section */}
+        <div className="pt-32 pb-16 px-6 text-center">
+          <div className="max-w-4xl mx-auto">
+            <div className="inline-block px-4 py-2 bg-orange-500/10 border border-orange-500/30 rounded-full text-orange-300 text-sm mb-6">
+              Event Recap
+            </div>
+            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+              CODERED 25
+            </h1>
+            <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
+              An electrifying day of competitive programming that brought together the finest coding minds. 
+              Witness the passion, the competition, and the incredible solutions that emerged.
+            </p>
           </div>
-        ))}
-      </div>
+        </div>
 
-      {/* Event Details */}
-      <div className="px-6 py-12 max-w-4xl mx-auto text-gray-300 space-y-6">
-        <h2 className="text-3xl font-semibold text-white mb-4" style={{ fontFamily: 'Georgia, serif' }}>
-          Why Join CODERED?
-        </h2>
-        <p className="text-base leading-relaxed">
-          Whether you're a budding programmer or a seasoned coder, CodeRed provides an exciting platform to showcase your skills. Compete, collaborate, and rise through the ranks in a high-stakes, fast-paced coding arena.
-        </p>
-        <ul className="list-disc pl-5 space-y-2 text-sm sm:text-base">
-          <li>🔥 Real-time problem solving under pressure</li>
-          <li>🏆 Win exciting prizes and certificates</li>
-          <li>🌐 Compete with the brightest across the country</li>
-          <li>🤝 Build connections with developers and mentors</li>
-        </ul>
-      </div>
+        {/* Stats Grid */}
+        <div className="px-6 py-12 max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+            {eventStats.map((stat, index) => (
+              <div key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center hover:bg-white/10 transition-all duration-300">
+                <stat.icon className="w-8 h-8 text-orange-400 mx-auto mb-3" />
+                <p className="text-2xl font-bold text-white mb-1">{stat.value}</p>
+                <p className="text-gray-400 text-sm">{stat.label}</p>
+              </div>
+            ))}
+          </div>
 
-      {/* Gallery */}
-      <div className="px-6 py-12 max-w-6xl mx-auto">
-        <h2 className="text-3xl font-semibold mb-6 text-white" style={{ fontFamily: 'Georgia, serif' }}>
-          Glimpses of CodeRed
-        </h2>
-        <div className="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4">
-          {galleryImages.map((src, index) => (
-            <img
-              key={index}
-              src={src}
-              alt={`CodeRed snapshot ${index + 1}`}
-              className="rounded-xl w-full object-cover hover:scale-105 transition-transform duration-300 shadow-md"
-              loading="lazy"
-            />
-          ))}
+          {/* Event Highlights */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-white mb-8" style={{ fontFamily: 'Georgia, serif' }}>
+              Event Highlights
+            </h2>
+            <div className="bg-gradient-to-r from-orange-500/10 to-red-500/10 border border-orange-500/20 rounded-2xl p-8">
+              <div className="grid md:grid-cols-2 gap-6">
+                {highlights.map((highlight, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-orange-400 rounded-full mt-3 flex-shrink-0"></div>
+                    <p className="text-gray-300">{highlight}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Gallery */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-white mb-8" style={{ fontFamily: 'Georgia, serif' }}>
+              Moments from CodeRed 25
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {galleryImages.map((src, index) => (
+                <div key={index} className="group relative overflow-hidden rounded-xl bg-gray-800">
+                  <img
+                    src={src}
+                    alt={`CodeRed 25 moment ${index + 1}`}
+                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
-     <Footer/>
+      <Footer />
     </div>
   );
 };
 
-export default Codered;
+export default CodeRed25;
