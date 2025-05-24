@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 const ECellEventsScroll = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAutoplay, setIsAutoplay] = useState(true);
   const scrollContainerRef = useRef(null);
   const itemRefs = useRef([]);
-
+  const navigate = useNavigate();
   const events = [
     { name: "CodeRed", path: "/codered" },
     { name: "Advert1.0", path: "/advert" },
@@ -81,180 +81,9 @@ const ECellEventsScroll = () => {
   };
 
   const handleEventClick = (event, index) => {
-    const componentName = event.name.toLowerCase().replace(/\s+/g, '').replace(/[^a-z0-9]/g, '');
-    
-    try {
-      const newWindow = window.open('', '_blank');
-      newWindow.document.write(`
-        <html>
-          <head>
-            <title>${event.name} - E-Cell Event</title>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-            <style>
-              * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-              }
-              
-              body { 
-                font-family: 'Sora', sans-serif; 
-                background: #000000;
-                color: white;
-                min-height: 100vh;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                position: relative;
-                overflow-x: hidden;
-              }
-              
-              .bg-pattern {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: radial-gradient(circle at 20% 80%, rgba(253, 119, 34, 0.1) 0%, transparent 50%),
-                           radial-gradient(circle at 80% 20%, rgba(253, 119, 34, 0.08) 0%, transparent 50%);
-                z-index: -1;
-              }
-              
-              .back-btn { 
-                position: fixed; 
-                top: 30px; 
-                left: 30px; 
-                background: rgba(253, 119, 34, 0.1);
-                border: 1px solid rgba(253, 119, 34, 0.3);
-                color: #FD7722; 
-                padding: 12px 24px; 
-                border-radius: 8px; 
-                cursor: pointer; 
-                font-size: 14px;
-                font-weight: 500;
-                transition: all 0.3s ease;
-                backdrop-filter: blur(10px);
-                z-index: 100;
-              }
-              
-              .back-btn:hover { 
-                background: rgba(253, 119, 34, 0.2);
-                border-color: #FD7722;
-                transform: translateY(-2px);
-              }
-              
-              .container {
-                text-align: center;
-                max-width: 800px;
-                padding: 0 40px;
-              }
-              
-              .event-title {
-                font-size: clamp(3rem, 8vw, 6rem);
-                font-weight: 700;
-                background: linear-gradient(135deg, #FD7722 0%, #ff8c42 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-                margin-bottom: 30px;
-                line-height: 1.1;
-              }
-              
-              .event-subtitle {
-                font-size: 1.2rem;
-                color: rgba(255, 255, 255, 0.7);
-                margin-bottom: 40px;
-                font-weight: 300;
-                letter-spacing: 0.5px;
-              }
-              
-              .event-description {
-                font-size: 1.1rem;
-                line-height: 1.8;
-                color: rgba(255, 255, 255, 0.8);
-                max-width: 600px;
-                margin: 0 auto 50px;
-              }
-              
-              .cta-button {
-                background: linear-gradient(135deg, #FD7722 0%, #ff8c42 100%);
-                border: none;
-                color: white;
-                padding: 16px 32px;
-                border-radius: 8px;
-                font-size: 1.1rem;
-                font-weight: 600;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-              }
-              
-              .cta-button:hover {
-                transform: translateY(-3px);
-                box-shadow: 0 10px 30px rgba(253, 119, 34, 0.3);
-              }
-              
-              .decorative-line {
-                width: 80px;
-                height: 3px;
-                background: linear-gradient(90deg, #FD7722, transparent);
-                margin: 30px auto;
-              }
-              
-              @media (max-width: 768px) {
-                .container {
-                  padding: 0 20px;
-                }
-                
-                .back-btn {
-                  top: 20px;
-                  left: 20px;
-                  padding: 10px 20px;
-                  font-size: 13px;
-                }
-                
-                .event-description {
-                  font-size: 1rem;
-                }
-                
-                .cta-button {
-                  padding: 14px 28px;
-                  font-size: 1rem;
-                }
-              }
-            </style>
-          </head>
-          <body>
-            <div class="bg-pattern"></div>
-            <button class="back-btn" onclick="window.close()">← Back to Events</button>
-            
-            <div class="container">
-              <h1 class="event-title">${event.name}</h1>
-              <div class="decorative-line"></div>
-              <p class="event-subtitle">E-Cell Exclusive Event</p>
-              <p class="event-description">
-                Welcome to ${event.name}! This is an innovative event designed to challenge and inspire entrepreneurs. 
-                Join us for an unforgettable experience filled with learning, networking, and growth opportunities.
-                <br><br>
-                Stay tuned for more details about registration, schedule, and exciting prizes!
-              </p>
-              <button class="cta-button" onclick="alert('Registration coming soon!')">
-                Register Interest
-              </button>
-            </div>
-          </body>
-        </html>
-      `);
-    } catch (error) {
-      console.log('Event component not found, showing default page');
-    }
-    
-    scrollToEvent(index);
-  };
+  const componentPath = `/events/${event.name.toLowerCase().replace(/\s+/g, '').replace(/[^a-z0-9]/g, '')}`;
+  window.open(componentPath, '_blank');
+};
 
   const getItemStyles = (index) => {
     const actualIndex = index % events.length;

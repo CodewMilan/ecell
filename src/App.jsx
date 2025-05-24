@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Alumni from './pages/Alumni';
 import Gallery from './pages/Gallery';
-// import EventDetails from './pages/EventDetails';
+import Codered from './components/Events/Codered'
+
 import Team from './pages/Team';
 import Preloader from './components/Preloader/Preloader';
 import './App.css';
@@ -31,6 +32,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/events/codered" element={<Codered />} />
              {/* <Route path="/events/:eventId" element={<EventDetails />} /> */}
             <Route path="/alumni" element={<Alumni />} /> 
 
