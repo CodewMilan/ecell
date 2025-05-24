@@ -2,13 +2,15 @@ import React from 'react';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import { ArrowLeft } from 'lucide-react';
-const galleryImages = [
-  '/images/codered1.jpg',
-  '/images/codered2.jpg',
-  '/images/codered3.jpg',
-  '/images/codered4.jpg',
-  '/images/codered5.jpg',
-  '/images/codered6.jpg',
+import codered1 from "./assets/codered25/codered1.jpg";
+import codered2 from "./assets/codered25/codered2.jpg";
+import codered3 from "./assets/codered25/codered3.jpg";
+import codered4 from "./assets/codered25/codered4.jpg";
+const galleryImages = [ 
+    codered1,
+    codered2,
+    codered3,
+    codered4
 ];
 
 const stats = [
