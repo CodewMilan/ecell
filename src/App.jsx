@@ -1,11 +1,11 @@
 import { useState, useEffect, createContext } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import Home from './pages/Home';
-import Alumni from './pages/Alumni';
-import Gallery from './pages/Gallery';
+import Home from './Pages/Home';
+import Alumni from './Pages/Alumni';
+import Gallery from './Pages/Gallery';
 import Codered from './components/Events/Codered';
-import Team from './pages/Team';
+import Team from './Pages/Team';
 import Preloader from './components/Preloader/Preloader';
 import './App.css';
 
