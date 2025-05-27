@@ -111,108 +111,150 @@ const renderCardContent = (card) => {
   return (
       <div className="min-h-screen bg-black lg:bg-transparent relative overflow-hidden" >
     
-{/* Desktop Background - Hidden on Mobile */}
-<motion.div 
-  animate={{ 
-    x: [0, 5, -5, 0],     
-    y: [0, -5, 5, 0]      
-  }} 
-  transition={{ 
-    duration: 15, 
-    repeat: Infinity, 
-    ease: "easeInOut" 
-  }} 
-  className="hidden lg:block absolute inset-0 w-full h-full bg-cover bg-center bg-gradient-to-br from-gray-900 via-black to-gray-900"
-  style={{ 
-    backgroundImage: `url(${bgimage})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat'
-  }}
->
-        <div className="absolute inset-0 bg-black/40" />
-        <motion.div 
-          className="absolute w-40 h-40 bg-white/10 rounded-full blur-3xl top-1/3 left-1/4" 
-          animate={{ 
-            x: [0, 20, -20, 0], 
-            y: [0, -10, 10, 0] 
-          }} 
-          transition={{ 
-            duration: 12, 
-            repeat: Infinity, 
-            ease: "easeInOut" 
-          }} 
-        />
-       
-        <motion.div 
-          className="absolute w-32 h-32 bg-purple-500/10 rounded-full blur-2xl top-2/3 right-1/4" 
-          animate={{ 
-            x: [0, -15, 15, 0], 
-            y: [0, 15, -15, 0] 
-          }} 
-          transition={{ 
-            duration: 10, 
-            repeat: Infinity, 
-            ease: "easeInOut",
-            delay: 2
-          }} 
-        />
-        <motion.div 
-          className="absolute w-24 h-24 bg-orange-500/10 rounded-full blur-xl top-1/2 right-1/3" 
-          animate={{ 
-            x: [0, 25, -25, 0], 
-            y: [0, -20, 20, 0] 
-          }} 
-          transition={{ 
-            duration: 14, 
-            repeat: Infinity, 
-            ease: "easeInOut",
-            delay: 4
-          }} 
-        />
-      </motion.div>
 
-    {/* Logos Section - responsive positioning */}
-<nav className="flex justify-between items-center px-4 lg:px-8 pt-4">
-  {/* Left: Logo 1 & Logo 2 - always visible */}
-  <div className="flex gap-4 items-center">
-    <img src="https://via.placeholder.com/50x50?text=Logo+1" alt="Logo 1" className="h-10 w-auto" />
-    <img src="https://via.placeholder.com/50x50?text=Logo+2" alt="Logo 2" className="h-10 w-auto" />
-    
-    {/* Logo 3 (mobile only) */}
-    <img
-      src="https://via.placeholder.com/50x50?text=Logo+3"
-      alt="Logo 3"
-      className="h-10 w-auto lg:hidden"
-    />
-  </div>
+  <motion.div 
+        className="absolute inset-0 opacity-[0.15]"
+        animate={{ 
+          opacity: [0.12, 0.18, 0.12],
+          scale: [1, 1.02, 1]
+        }}
+        transition={{ 
+          duration: 6, 
+          repeat: Infinity, 
+          ease: "easeInOut" 
+        }}
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(19, 3, 3, 0.2) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(9, 2, 2, 0.2) 1px, transparent 1px)
+          `,
+          backgroundSize: '25px 25px'
+        }}
+      />
 
-  {/* Right: Logo 3 (desktop only) */}
-  <div className="hidden lg:block">
-    <img
-      src="https://via.placeholder.com/50x50?text=Logo+3"
-      alt="Logo 3"
-      className="h-10 w-auto"
-    />
-  </div>
-</nav>
+      {/* Secondary Grid Layer for Depth */}
+      <motion.div 
+        className="absolute inset-0 opacity-[0.08]"
+        animate={{ 
+          opacity: [0.05, 0.12, 0.05],
+          x: [0, 10, 0],
+          y: [0, 10, 0]
+        }}
+        transition={{ 
+          duration: 10, 
+          repeat: Infinity, 
+          ease: "easeInOut",
+          delay: 1
+        }}
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)
+          `,
+          backgroundSize: '50px 50px'
+        }}
+      />
+      
+      {/* Enhanced moving gradient accent */}
+      <motion.div 
+        className="absolute inset-0 opacity-[0.06]"
+        animate={{ 
+          background: [
+            'radial-gradient(circle at 20% 20%, rgba(255,255,255,0.15) 0%, transparent 60%)',
+            'radial-gradient(circle at 80% 80%, rgba(255,255,255,0.15) 0%, transparent 60%)',
+            'radial-gradient(circle at 40% 60%, rgba(255,255,255,0.12) 0%, transparent 60%)',
+            'radial-gradient(circle at 20% 20%, rgba(255,255,255,0.15) 0%, transparent 60%)'
+          ]
+        }}
+        transition={{ 
+          duration: 15, 
+          repeat: Infinity, 
+          ease: "easeInOut" 
+        }}
+      />
 
-       <div className="flex items-center justify-center min-h-screen relative px-4 pt-20 pb-8 z-10">
-        
-        {/* Initial Animation - "WE ARE ENTREPRENEURSHIP CELL" */}
-        <div className={`absolute inset-0 flex items-center justify-center transition-all duration-1500 ease-out ${
-          animationStage === 1 ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-        } ${animationStage >= 2 ? 'opacity-0 pointer-events-none scale-110' : ''}`}>
-          <div className="text-center">
-            <h1 className="text-5xl sm:text-6xl lg:text-8xl xl:text-9xl font-bold text-white leading-tight" style={{ fontFamily: 'Sora, sans-serif' }}>
-              WE ARE<br />
-              <span className="italic font-light">ENTREPRENEURSHIP</span><br />
-              <span className="hidden sm:inline">CELL</span>
-              <span className="sm:hidden">CELL</span>
-            </h1>
-          </div>
+      {/* Pulsing Grid Intersections */}
+      <motion.div 
+        className="absolute inset-0 opacity-[0.1]"
+        animate={{ 
+          opacity: [0.05, 0.15, 0.05]
+        }}
+        transition={{ 
+          duration: 4, 
+          repeat: Infinity, 
+          ease: "easeInOut",
+          delay: 2
+        }}
+        style={{
+          backgroundImage: `
+            radial-gradient(circle at 25px 25px, rgba(255,255,255,0.3) 1px, transparent 2px)
+          `,
+          backgroundSize: '25px 25px'
+        }}
+      />
+
+      {/* Logos Section - responsive positioning */}
+      <nav className="flex justify-between items-center px-4 lg:px-8 pt-4">
+        {/* Left: Logo 1 & Logo 2 - always visible */}
+        <div className="flex gap-4 items-center">
+          <img src="https://via.placeholder.com/50x50?text=Logo+1" alt="Logo 1" className="h-10 w-auto" />
+          <img src="https://via.placeholder.com/50x50?text=Logo+2" alt="Logo 2" className="h-10 w-auto" />
+          
+          {/* Logo 3 (mobile only) */}
+          <img
+            src="https://via.placeholder.com/50x50?text=Logo+3"
+            alt="Logo 3"
+            className="h-10 w-auto lg:hidden"
+          />
         </div>
 
+        {/* Right: Logo 3 (desktop only) */}
+        <div className="hidden lg:block">
+          <img
+            src="https://via.placeholder.com/50x50?text=Logo+3"
+            alt="Logo 3"
+            className="h-10 w-auto"
+          />
+        </div>
+      </nav>
+
+      <div className="flex items-center justify-center min-h-screen relative px-4 pt-20 pb-8 z-10">
+        
+        {/* Enhanced Initial Animation - "WE ARE ENTREPRENEURSHIP CELL" */}
+        <motion.div
+          className={`absolute inset-0 flex items-center justify-center transition-all duration-1500 ease-out ${
+            animationStage === 1 ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+          } ${animationStage >= 2 ? 'opacity-0 pointer-events-none scale-110' : ''}`}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: animationStage === 1 ? 1 : 0, y: animationStage === 1 ? 0 : -30 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        >
+          <div className="text-center max-w-6xl mx-auto">
+            {/* Mobile-first responsive text */}
+            <motion.h1
+              className="font-bold text-white leading-tight"
+              style={{ fontFamily: 'Sora, sans-serif' }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2, delay: 0.3 }}
+            >
+              {/* WE ARE - Main text */}
+              <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl mb-2 sm:mb-4">
+                WE ARE
+              </div>
+              
+              {/* ENTREPRENEURSHIP - Balanced sizing */}
+              <div className="italic font-light text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl mb-2 sm:mb-4 px-2">
+                ENTREPRENEURSHIP
+              </div>
+              
+              {/* CELL */}
+              <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
+                CELL
+              </div>
+            </motion.h1>
+          </div>
+        </motion.div>
         {/* Main Layout */}
         <div className={`w-full transition-all duration-2000 ease-out ${
           animationStage >= 2 ? 'opacity-100' : 'opacity-0'

@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import logo from '../../assets/ecellor.png';
+
 const FloatingNav = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMouseNearTop, setIsMouseNearTop] = useState(false);
 
-const navItems = [
+  const navItems = [
     { name: 'Home', href: '/' },
     { name: 'Events', href: '/#events' }, 
     { name: 'Failure Story', href: '/#failure-story' }, 
@@ -18,17 +20,43 @@ const navItems = [
   useEffect(() => {
     const controlNavbar = () => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setIsVisible(false);
-      } else {
+      
+      // Show navbar if:
+      // 1. Scrolling up
+      // 2. At the top of the page
+      // 3. Mouse is near the top of the screen
+      if (currentScrollY < lastScrollY || currentScrollY < 100 || isMouseNearTop) {
         setIsVisible(true);
+      } 
+      // Hide navbar only when scrolling down and mouse is not near top
+      else if (currentScrollY > lastScrollY && currentScrollY > 100 && !isMouseNearTop) {
+        setIsVisible(false);
       }
+      
       setLastScrollY(currentScrollY);
     };
 
+    const handleMouseMove = (e) => {
+      // Show navbar when mouse is within 80px of the top
+      const mouseNearTop = e.clientY <= 80;
+      setIsMouseNearTop(mouseNearTop);
+      
+      // If mouse is near top, immediately show navbar
+      if (mouseNearTop) {
+        setIsVisible(true);
+      }
+    };
+
+    // Add event listeners
     window.addEventListener('scroll', controlNavbar);
-    return () => window.removeEventListener('scroll', controlNavbar);
-  }, [lastScrollY]);
+    window.addEventListener('mousemove', handleMouseMove);
+    
+    // Cleanup
+    return () => {
+      window.removeEventListener('scroll', controlNavbar);
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, [lastScrollY, isMouseNearTop]);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -94,9 +122,6 @@ const navItems = [
             {isMobileMenuOpen ? <X size={24} strokeWidth={2.5} /> : <Menu size={24} strokeWidth={2.5} />}
           </div>
         </button>
-
-        {/* Mobile Logo - Fixed Position */}
-        
       </div>
 
       {/* Mobile Menu Overlay */}
@@ -167,9 +192,8 @@ const navItems = [
           </div>
         </div>
       </div>
- </>
+    </>
   );
 };
-
 
 export default FloatingNav;

@@ -1,6 +1,7 @@
 import { useState, useEffect, createContext } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import Home from './pages/Home';
 import Alumni from './pages/Alumni';
 import Gallery from './pages/Gallery';
 import Codered from './components/Events/Codered';
