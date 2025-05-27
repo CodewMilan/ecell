@@ -31,7 +31,7 @@ import ananya from './assets/team/ananya.jpg';
 import anvita from './assets/team/anvita.jpg';
 import ansu from './assets/team/ansu.jpg';
 import bhavana from './assets/team/bhavana.jpg';
-import faizan from './assets/team/faizan.jpg';
+import faizan from './assets/team/Faizan.jpg';
 import rishav from './assets/team/rishav.jpg';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
