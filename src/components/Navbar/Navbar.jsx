@@ -73,8 +73,8 @@ const FloatingNav = () => {
         <div className="hidden md:flex items-center bg-gradient-to-r from-black/95 via-black/98 to-black/95 backdrop-blur-xl px-4 py-3 shadow-2xl border border-orange-500/40 rounded-full hover:border-orange-400/60 transition-all duration-300">
           
           {/* Logo Section */}
-          <div className="flex items-center mr-6">
-            <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-orange-400/50 shadow-lg hover:border-orange-400/70 transition-all duration-300">
+          <div className="flex items-center mr-6 ml-4">
+            <div className="w-10 h-10 rounded-full overflow-hidden shadow-lg hover:border-orange-400/70 transition-all duration-600">
               <img
                 src={logo}
                 alt="E-Cell Logo"
@@ -89,7 +89,7 @@ const FloatingNav = () => {
                 E
               </div>
             </div>
-            <span className="ml-3 text-white font-semibold text-lg tracking-wide">E-Cell</span>
+           
           </div>
 
           {/* Navigation Links */}
