@@ -211,9 +211,9 @@ const renderCardContent = (card) => {
         {/* Right: Logo 3 (desktop only) */}
         <div className="hidden lg:block">
           <img
-            src="https://via.placeholder.com/50x50?text=Logo+3"
+            src="./src/assets/ecell1.png"
             alt="Logo 3"
-            className="h-10 w-auto"
+            className="h-14 w-14"
           />
         </div>
       </nav>

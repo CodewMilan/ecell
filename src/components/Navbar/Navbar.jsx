@@ -70,7 +70,7 @@ const FloatingNav = () => {
       }`} style={{ fontFamily: 'Sora, sans-serif' }}>
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center bg-gradient-to-r from-black/95 via-black/98 to-black/95 backdrop-blur-xl px-4 py-3 shadow-2xl border rounded-full hover:border-black transition-all duration-300">
+        <div className="hidden md:flex items-center bg-gradient-to-r from-black/95 via-black/98 to-black/95 backdrop-blur-xl px-4 py-3 shadow-2xl rounded-full transition-all duration-300">
           
           {/* Logo Section */}
           <div className="flex items-center mr-6 ml-4">
@@ -98,7 +98,7 @@ const FloatingNav = () => {
               <li key={index}>
                 <a
                   href={item.href}
-                  className="text-white/90 hover:text-white transition-all duration-200 text-sm font-medium relative group px-4 py-2 rounded-full hover:bg-orange-500/10 border border-transparent hover:border-orange-500/30"
+                  className="text-white/90 hover:text-white transition-all duration-200 text-sm font-medium relative group px-4 py-2 rounded-full border border-transparent "
                 >
                   {item.name}
                   <span className="absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-orange-400 transition-all duration-200 group-hover:w-full rounded-full"></span>
