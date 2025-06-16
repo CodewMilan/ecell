@@ -196,9 +196,9 @@ const renderCardContent = (card) => {
       {/* Logos Section - responsive positioning */}
       <nav className="flex justify-between items-center px-4 lg:px-8 pt-4">
         {/* Left: Logo 1 & Logo 2 - always visible */}
-        <div className="flex gap-4 items-center">
-          <img src="https://via.placeholder.com/50x50?text=Logo+1" alt="Logo 1" className="h-10 w-auto" />
-          <img src="https://via.placeholder.com/50x50?text=Logo+2" alt="Logo 2" className="h-10 w-auto" />
+        <div className="flex gap-8 items-center justify-center">
+          <img src="./src/assets/bmsit.png" alt="Logo 1" className="h-14 w-14" />
+          <img src="./src/assets/bicep.png" alt="Logo 2" className="h-14 w-14" />
           
           {/* Logo 3 (mobile only) */}
           <img

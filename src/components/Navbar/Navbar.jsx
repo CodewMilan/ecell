@@ -70,7 +70,7 @@ const FloatingNav = () => {
       }`} style={{ fontFamily: 'Sora, sans-serif' }}>
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center bg-gradient-to-r from-black/95 via-black/98 to-black/95 backdrop-blur-xl px-4 py-3 shadow-2xl border border-orange-500/40 rounded-full hover:border-orange-400/60 transition-all duration-300">
+        <div className="hidden md:flex items-center bg-gradient-to-r from-black/95 via-black/98 to-black/95 backdrop-blur-xl px-4 py-3 shadow-2xl border rounded-full hover:border-black transition-all duration-300">
           
           {/* Logo Section */}
           <div className="flex items-center mr-6 ml-4">
