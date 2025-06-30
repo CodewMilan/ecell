@@ -17,14 +17,14 @@ function App() {
   const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
-    // Extended loading time for the enhanced preloader
+
     const timer = setTimeout(() => {
       setLoading(false);
-      // Small delay before showing content for smooth transition
+     
       setTimeout(() => {
         setShowContent(true);
       }, 100);
-    }, 4000); // 4 seconds for the full preloader experience
+    }, 4000); 
     
     return () => clearTimeout(timer);
   }, []);

@@ -1,5 +1,7 @@
+import React from 'react';
+import { Linkedin, Github, Crown, Star, Shield, Users, Award, Heart } from 'lucide-react';
 
-import React, { useState, useEffect } from 'react';
+// Mock images for demonstration - replace with actual imports
 import arush from './assets/team/arush.jpg';
 import ashutosh from './assets/team/ashutosh.jpg';
 import deepthijain from './assets/team/deepthijain.jpg';
@@ -33,454 +35,452 @@ import ansu from './assets/team/ansu.jpg';
 import bhavana from './assets/team/bhavana.jpg';
 import faizan from './assets/team/Faizan.jpg';
 import rishav from './assets/team/rishav.jpg';
-import Navbar from '../components/Navbar/Navbar';
-import Footer from '../components/Footer/Footer';
-const ECellTeamPage = () => {
-  const [hoveredMember, setHoveredMember] = useState(null);
 
-  // Particle animation effect
-  useEffect(() => {
-    const canvas = document.getElementById('particles-canvas');
-    if (!canvas) return;
-    
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
 
-    const particles = [];
-    const particleCount = 100;
-
-    // Create particles
-    for (let i = 0; i < particleCount; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
-        size: Math.random() * 2 + 1,
-        opacity: Math.random() * 0.5 + 0.2
-      });
+const teamData = {
+  "leadership": [
+    {
+      "name": "Maxson Matthew",
+      "position": "President",
+      "image": maxson,
+      "socials": {
+        "linkedin": "",
+        "github": ""
+      }
+    },
+    {
+      "name": "Mohit Monnappa",
+      "position": "Mentor",
+      "image": mohit,
+      "socials": {
+        "linkedin": "",
+        "github": ""
+      }
+    },
+    {
+      "name": "Nishitha Bodipati",
+      "position": "Vice President",
+      "image": nishitha,
+      "socials": {
+        "linkedin": "",
+        "github": ""
+      }
+    },
+    {
+      "name": "Vaibhav P",
+      "position": "Vice President",
+      "image": vaibhav,
+      "socials": {
+        "linkedin": "",
+        "github": ""
+      }
     }
-
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
-      particles.forEach(particle => {
-        particle.x += particle.vx;
-        particle.y += particle.vy;
-
-        if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
-        if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
-
-        ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(249, 115, 22, ${particle.opacity})`;
-        ctx.fill();
-
-        // Draw connections
-        particles.forEach(otherParticle => {
-          const dx = particle.x - otherParticle.x;
-          const dy = particle.y - otherParticle.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < 100) {
-            ctx.beginPath();
-            ctx.moveTo(particle.x, particle.y);
-            ctx.lineTo(otherParticle.x, otherParticle.y);
-            ctx.strokeStyle = `rgba(249, 115, 22, ${0.1 * (1 - distance / 100)})`;
-            ctx.stroke();
-          }
-        });
-      });
-
-      requestAnimationFrame(animate);
+  ],
+  "heads": [
+    {
+      "name": "Atul Kumar",
+      "position": "Tech Head",
+      "image": atul,
+      "socials": {
+        "linkedin": "",
+        "github": ""
+      }
+    },
+    {
+      "name": "Fardeen K",
+      "position": "Corporate Relations Head",
+      "image": fardeen,
+      "socials": {
+        "linkedin": "",
+        "github": ""
+      }
+    },
+    {
+      "name": "Gaganjith R",
+      "position": "Events & Ops Head",
+      "image": gaganjith,
+      "socials": {
+        "linkedin": "",
+        "github": ""
+      }
+    },
+    {
+      "name": "Hitesh R",
+      "position": "Media & Marketing Head",
+      "image": hitesh,
+      "socials": {
+        "linkedin": "",
+        "github": ""
+      }
+    },
+    {
+      "name": "Shriya",
+      "position": "Content Head",
+      "image": shriya,
+      "socials": {
+        "linkedin": "",
+        "github": ""
+      }
+    },
+    {
+      "name": "Tirth Panchori",
+      "position": "Design Head",
+      "image": tirth,
+      "socials": {
+        "linkedin": "",
+        "github": ""
+      }
     }
+  ],
+  "viceHeads": [
+    {
+      "name": "Milan S",
+      "position": "Tech Vice Head",
+      "image": milan,
+      "socials": {
+        "linkedin": "",
+        "github": ""
+      }
+    },
+    {
+      "name": "Bhanu Prasad",
+      "position": "Media Vice Head",
+      "image": bhanu,
+      "socials": {
+        "linkedin": "",
+        "github": ""
+      }
+    },
+    {
+      "name": "Akhilesh Pachnanda",
+      "position": "Design Vice Head",
+      "image": akhilesh,
+      "socials": {
+        "linkedin": "",
+        "github": ""
+      }
+    }
+  ],
+  "associates": [
+    {
+      "name": "Ananya",
+      "position": "Media Associate",
+      "image": ananya,
+      "socials": {}
+    },
+    {
+      "name": "Bhavana",
+      "position": "Marketing Associate",
+      "image": bhavana,
+      "socials": {}
+    },
+    {
+      "name": "Dhyeya",
+      "position": "Operations Associate",
+      "image": Dhyeya,
+      "socials": {}
+    },
+    {
+      "name": "Divyashree",
+      "position": "Operations Associate",
+      "image": divyashree,
+      "socials": {}
+    },
+    {
+      "name": "Jasvanti",
+      "position": "Design Associate",
+      "image": jasvanti,
+      "socials": {}
+    },
+    {
+      "name": "Krishna",
+      "position": "Marketing Associate",
+      "image": krishna,
+      "socials": {}
+    },
+    {
+      "name": "Faizan Khan",
+      "position": "Marketing Associate",
+      "image": faizan,
+      "socials": {}
+    },
+    {
+      "name": "Parathana Dillip",
+      "position": "Corporate Relations Associate",
+      "image": parathana,
+      "socials": {}
+    },
+    {
+      "name": "Ansu Kumar",
+      "position": "Tech Associate",
+      "image": ansu,
+      "socials": {}
+    },
+    {
+      "name": "Anvita",
+      "position": "Marketing Associate",
+      "image": anvita,
+      "socials": {}
+    },
+    {
+      "name": "Arush",
+      "position": "Corporate Relations Associate",
+      "image": arush,
+      "socials": {}
+    },
+    {
+      "name": "Ashutosh",
+      "position": "Content Associate",
+      "image": ashutosh,
+      "socials": {}
+    },
+    {
+      "name": "Deepthi Jain",
+      "position": "Event & Ops Associate",
+      "image": deepthijain,
+      "socials": {}
+    },
+    {
+      "name": "Gagan HS",
+      "position": "Operations Associate",
+      "image": gaganhs,
+      "socials": {}
+    },
+    {
+      "name": "Jayakeerthi",
+      "position": "Content Associate",
+      "image": jayakeerthi,
+      "socials": {}
+    },
+    {
+      "name": "Krish Jain",
+      "position": "Tech Associate",
+      "image": krishjain,
+      "socials": {}
+    },
+    {
+      "name": "Manal",
+      "position": "Marketing Associate",
+      "image": manal,
+      "socials": {}
+    },
+    {
+      "name": "Raashi",
+      "position": "Design Associate",
+      "image": raashi,
+      "socials": {}
+    },
+    {
+      "name": "Rishav",
+      "position": "Event & Ops Associate",
+      "image": rishav,
+      "socials": {}
+    },
+    {
+      "name": "Sathya Shivani",
+      "position": "Corporate Relations Associate",
+      "image": sathyashivani,
+      "socials": {}
+    }
+  ]
+};
 
-    animate();
-
-    const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-
-  // Team data structure with vice heads added
-  const teamData = {
-    leadership: [
-      {
-        id: 'president',
-        name: 'Maxson Matthew',
-        position: 'President',
-        image: maxson
-      }
-    ],
-    mentor: [
-      {
-        id: 'mentor',
-        name: 'Mohit Monnappa',
-        position: 'Mentor',
-        image: mohit
-      }
-    ],
-    vicePresidents: [
-      {
-        id: 'vp2',
-        name: 'Nishitha Bodipati',
-        position: 'Vice President',
-        image: nishitha
-      },
-      {
-        id: 'vp1',
-        name: 'Vaibhav P',
-        position: 'Vice President',
-        image: vaibhav
-      }
-    ],
-    heads: [
-      {
-        id: 'tech',
-        name: 'Atul Kumar',
-        position: 'Tech Head',
-        image: atul
-      },
-      {
-        id: 'outreach',
-        name: 'Fardeen K',
-        position: 'Corporate Relations Head',
-        image:fardeen
-      },
-      {
-        id: 'events',
-        name: 'Gaganjith R',
-        position: 'Events & Ops Head',
-        image: gaganjith
-      },
-      {
-        id: 'marketing',
-        name: 'Hitesh R',
-        position: 'Media & Marketing Head',
-        image: hitesh
-      },
-      {
-        id: 'content',
-        name: 'Shriya',
-        position: 'Content Head',
-        image: shriya
-      },
-      {
-        id: 'design',
-        name: 'Tirth Panchori',
-        position: 'Design Head',
-        image: tirth
-      }
-    ],
-    viceHeads: [
-      {
-        id: 'vice-tech',
-        name: 'Milan S',
-        position: 'Tech Vice Head',
-        image: milan
-      },
-      {
-        id: 'vice-media&marketing',
-        name: 'Bhanu Prasad',
-        position: 'Media Vice Head',
-        image: bhanu
-      },
-      {
-        id: 'vice-design',
-        name: 'Akhilesh Pachnanda',
-        position: 'Design Vice Head',
-        image: akhilesh
-      }
-    ],
-    associates: [
-      {
-        name: 'Ananya',
-        position: 'Media Associate',
-        image: ananya
-      },
-        {
-        name: 'Bhavana',
-        position: 'Marketing Associate',
-        image: bhavana
-      },
-      {
-        name: 'Dhyeya',
-        position: 'Operations Associate',
-        image: Dhyeya
-      },
-       {
-        name: 'Divyashree',
-        position: 'Operations Associate',
-        image: divyashree
-      },
-       {
-        name: 'Jasvanti',
-        position: 'Design Associate',
-        image: jasvanti
-      },
-      {
-        name: 'Krishna',
-        position: 'Marketing Associate',
-        image: krishna
-      },
-      {
-        name: 'Faizan Khan',
-        position: 'Marketing Associate',
-        image: faizan
-      },
-      {
-        name: 'Parathana Dillip',
-        position: 'Corporate Relations Associate',
-        image: parathana
-      },
-     
-     {
-        name: 'Ansu Kumar',
-        position: 'Tech Associate',
-        image: ansu
-      },
-      {
-        name: 'anvita',
-        position: 'Marketing Associate',
-        image: anvita
-      },
-    
-      {
-        name: 'Arush',
-        position: 'Corporate Relations Associate',
-        image: arush
-      },
-      {
-        name: 'Ashutosh',
-        position: 'Content Associate',
-        image: ashutosh
-      },
-      {
-        name: 'Deepthi Jain',
-        position: 'Event & Ops Associate',
-        image: deepthijain
-      },
-      {
-        name: 'Gagan HS',
-        position: 'Operations Associate',
-        image: gaganhs
-      },
-      {
-        name: 'Jayakeerthi',
-        position: 'Content Associate',
-        image: jayakeerthi
-      },
-      {
-        name: 'krish Jain',
-        position: 'Tech Associate',
-        image: krishjain
-      },
-       {
-        name: 'Manal',
-        position: 'Marketing Associate',
-        image: manal
-      },
-      
-      {
-        name: 'Raashi',
-        position: 'Design Associate',
-        image: raashi
-      },
-      {
-         name: 'Rishav',
-        position: 'Event & Ops Associate',
-        image: rishav
-      },
-      {
-        name: 'Sathya Shivani',
-        position: 'Corporate Relations Associate',
-        image: sathyashivani
-      }
-      
-     
-      
-      
-    ]
+// Enhanced Circular Card with bigger size and better ribbons
+const CircularCard = ({ member, ribbonColor = "orange", isAssociate = false }) => {
+  const ribbonColors = {
+    orange: { from: "#f97316", to: "#ea580c", glow: "orange-500" },
+    blue: { from: "#3b82f6", to: "#1d4ed8", glow: "blue-500" }, 
+    purple: { from: "#8b5cf6", to: "#7c3aed", glow: "purple-500" },
+    green: { from: "#10b981", to: "#059669", glow: "green-500" }
   };
-  const TeamCard = ({ member, size = 'normal' }) => {
-    const sizeClasses = {
-      hero: 'w-72 h-80 sm:w-80 sm:h-96 md:w-96 md:h-[28rem]',
-      large: 'w-60 h-72 sm:w-72 sm:h-80 md:w-80 md:h-96',
-      normal: 'w-56 h-70 sm:w-64 sm:h-80 md:w-72 md:h-88 lg:w-80 lg:h-96',
-      small: 'w-48 h-60 sm:w-56 sm:h-70 md:w-64 md:h-80 lg:w-72 lg:h-88',
-      tiny: 'w-40 h-52 sm:w-48 sm:h-60 md:w-56 md:h-70 lg:w-64 lg:h-80'
-    };
 
-    return (
-      <div 
-        className={`group relative cursor-pointer transition-all duration-300 hover:scale-105 ${sizeClasses[size]} mx-auto`}
-        onMouseEnter={() => setHoveredMember(member.id || member.name)}
-        onMouseLeave={() => setHoveredMember(null)}
-        style={{ fontFamily: "'Sora', sans-serif" }}
-      >
-        <div className="relative w-full h-full bg-gray-900 border-2 border-gray-700 group-hover:border-orange-500 transition-all duration-300 overflow-hidden shadow-xl group-hover:shadow-2xl rounded-lg">
-
-          {/* Image container - increased height ratio */}
-          <div className="relative overflow-hidden h-3/4">
-            <img 
-              src={member.image} 
-              alt={member.name}
-              className="w-full h-full object-cover object-center transition-all duration-500 group-hover:scale-110 bg-gray-800"
-            />
-            
-            {/* Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-
-            {/* Orange accent on hover */}
-            <div className="absolute top-0 right-0 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-orange-500 to-orange-600 opacity-0 group-hover:opacity-100 transition-all duration-300 transform rotate-45 translate-x-6 -translate-y-6 group-hover:translate-x-3 group-hover:-translate-y-3 sm:translate-x-8 sm:-translate-y-8 sm:group-hover:translate-x-4 sm:group-hover:-translate-y-4"></div>
-          </div>
-
-          {/* Content section - increased height for better text spacing */}
-          <div className="absolute bottom-0 left-0 right-0 h-1/4 bg-black/90 backdrop-blur-sm flex flex-col justify-center px-4 py-3 sm:px-5 sm:py-4 border-t border-orange-500/30">
-            <h3 className="font-bold text-white text-sm sm:text-base lg:text-lg mb-1 leading-tight text-center" style={{ fontFamily: "'Sora', serif" }}>
-              {member.name}
-            </h3>
-            <p className="text-orange-400 font-semibold text-xs sm:text-sm uppercase tracking-wider leading-tight text-center">
-              {member.position}
-            </p>
-          </div>
-        </div>
-      </div>
-    );
-  };
+  const colors = ribbonColors[ribbonColor];
+  const imageSize = isAssociate ? "w-36 h-36" : "w-44 h-44";
+  const ribbonWidth = isAssociate ? 160 : 180;
+  const ribbonHeight = isAssociate ? 45 : 55;
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
-      {/* Particles Background */}
-      <canvas 
-        id="particles-canvas" 
-        className="fixed inset-0 pointer-events-none z-0"
-      ></canvas>
-
-      {/* Background grid overlay */}
-      <div className="fixed inset-0 pointer-events-none z-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `
-            linear-gradient(rgba(249, 115, 22, 0.05) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(249, 115, 22, 0.05) 1px, transparent 1px)
-          `,
-          backgroundSize: '30px 30px',
-        }}></div>
+    <div className={`group relative flex flex-col items-center ${isAssociate ? 'mb-8' : 'mb-12'}`}>
+      {/* Circular Image Container with more spacing */}
+      <div className="relative mb-4">
+        <div className={`${imageSize} rounded-full overflow-hidden border-4 border-gray-600/50 group-hover:border-${colors.glow}/60 transition-all duration-500 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-${colors.glow}/30`}>
+          <img
+            src={member.image || mockImage}
+            alt={member.name}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+        </div>
+        
+        {/* Enhanced Decorative Ring with more spacing */}
+        <div className={`absolute -inset-4 rounded-full border-2 border-${colors.glow}/20 group-hover:border-${colors.glow}/50 transition-all duration-500 group-hover:rotate-180`}></div>
+        <div className={`absolute -inset-2 rounded-full border border-${colors.glow}/10 group-hover:border-${colors.glow}/30 transition-all duration-700 group-hover:-rotate-180`}></div>
       </div>
-
-      <div className="relative z-20 pt-20 pb-16 px-4 sm:pt-24 sm:pb-20 sm:px-6 lg:px-8">
-        <div className="max-w-8xl mx-auto">
-          {/* Header */}
-          <Navbar />
-          <div className="text-center mb-16 sm:mb-24">
-            <div className="mb-8 sm:mb-12">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-2 tracking-tighter" style={{ fontFamily: "'Georgia', serif" }}>
-                Meet Our
-              </h1>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-orange-400 to-orange-600 italic tracking-tighter mb-8 sm:mb-12" style={{ fontFamily: "'Georgia', serif" }}>
-                TEAM
-              </h1>
-            </div>
-            
-            {/* Divider */}
-            <div className="flex justify-center items-center space-x-3 sm:space-x-4">
-              <div className="w-16 sm:w-24 h-px bg-gradient-to-r from-transparent to-orange-500"></div>
-              <div className="w-2 h-2 sm:w-3 sm:h-3 bg-orange-500 transform rotate-45"></div>
-              <div className="w-20 sm:w-32 h-px bg-gradient-to-r from-orange-500 to-orange-600"></div>
-              <div className="w-2 h-2 sm:w-3 sm:h-3 bg-orange-600 transform rotate-45"></div>
-              <div className="w-16 sm:w-24 h-px bg-gradient-to-r from-orange-600 to-transparent"></div>
-            </div>
-          </div>
-
-          {/* Leadership Section */}
-          <div className="mb-20 sm:mb-28">
-            <div className="text-center mb-12 sm:mb-16">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600 mb-4" style={{ fontFamily: "'Georgia', serif" }}>
-                LEADERSHIP
-              </h2>
-              <div className="w-12 sm:w-16 h-1 bg-orange-500 mx-auto"></div>
-            </div>
-            
-            {/* President */}
-            <div className="flex justify-center mb-16 sm:mb-20">
-              <TeamCard member={teamData.leadership[0]} size="hero" />
-            </div>
-            
-            {/* Vice Presidents and Mentor - Better centering */}
-            <div className="flex justify-center">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 max-w-6xl justify-items-center">
-                {teamData.vicePresidents.map((member) => (
-                  <TeamCard key={member.id} member={member} size="large" />
-                ))}
-                <div className="sm:col-span-2 lg:col-span-1 flex justify-center">
-                  <TeamCard member={teamData.mentor[0]} size="large" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Department Heads - Improved spacing for mobile */}
-          <div className="mb-20 sm:mb-28">
-            <div className="text-center mb-12 sm:mb-16">
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600 mb-4" style={{ fontFamily: "'Georgia', serif" }}>
-                VERTICAL HEADS
-              </h2>
-              <div className="w-10 sm:w-14 h-1 bg-orange-500 mx-auto"></div>
-            </div>
-            <div className="flex justify-center">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 max-w-7xl justify-items-center">
-                {teamData.heads.map((member) => (
-                  <TeamCard key={member.id} member={member} size="normal" />
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Vice Heads - Properly centered */}
-          <div className="mb-20 sm:mb-28">
-            <div className="text-center mb-12 sm:mb-16">
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600 mb-4" style={{ fontFamily: "'Georgia', serif" }}>
-                VICE HEADS
-              </h2>
-              <div className="w-10 sm:w-14 h-1 bg-orange-500 mx-auto"></div>
-            </div>
-            <div className="flex justify-center">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 max-w-5xl justify-items-center">
-                {teamData.viceHeads.map((member) => (
-                  <TeamCard key={member.id} member={member} size="small" />
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Associates - Better spacing and larger cards */}
-          <div className="mb-16 sm:mb-20">
-            <div className="text-center mb-12 sm:mb-16">
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600 mb-4" style={{ fontFamily: "'Georgia', serif" }}>
-                ASSOCIATES
-              </h2>
-              <div className="w-10 sm:w-14 h-1 bg-orange-500 mx-auto"></div>
-            </div>
-            <div className="flex justify-center">
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 sm:gap-8 lg:gap-10 max-w-8xl justify-items-center">
-                {teamData.associates.map((member, index) => (
-                  <TeamCard key={index} member={member} size="tiny" />
-                ))}
-              </div>
-            </div>
-          </div>
+      
+      {/* Enhanced SVG Ribbon with vertical text */}
+      <div className={`relative ${isAssociate ? '-mt-2' : '-mt-4'} z-10 mb-4`}>
+        <svg width={ribbonWidth} height={ribbonHeight} viewBox={`0 0 ${ribbonWidth} ${ribbonHeight}`} className="drop-shadow-xl">
+          <defs>
+            <linearGradient id={`ribbon-${member.name.replace(/\s+/g, '')}`} x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor={colors.from} />
+              <stop offset="50%" stopColor={colors.to} />
+              <stop offset="100%" stopColor={colors.from} />
+            </linearGradient>
+            <filter id={`glow-${member.name.replace(/\s+/g, '')}`}>
+              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+              <feMerge> 
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <path
+            d={`M10 ${ribbonHeight/5} L${ribbonWidth-10} ${ribbonHeight/5} L${ribbonWidth-5} ${ribbonHeight/2} L${ribbonWidth-10} ${ribbonHeight*4/5} L10 ${ribbonHeight*4/5} L5 ${ribbonHeight/2} Z`}
+            fill={`url(#ribbon-${member.name.replace(/\s+/g, '')})`}
+            filter={`url(#glow-${member.name.replace(/\s+/g, '')})`}
+            className="group-hover:brightness-110 transition-all duration-300"
+          />
+        </svg>
+        
+        {/* Vertical Text on Ribbon */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span className={`text-white font-bold ${isAssociate ? 'text-sm' : 'text-base'} text-center px-2 leading-tight tracking-wide transform -rotate-0`}>
+            {member.position.length > (isAssociate ? 16 : 20) ? member.position.substring(0, (isAssociate ? 13 : 17)) + '...' : member.position}
+          </span>
         </div>
       </div>
-
-      <Footer />
+      
+      {/* Name with more spacing */}
+      <h3 className={`font-bold text-white text-center mt-2 ${isAssociate ? 'text-base' : 'text-lg'} group-hover:text-${colors.glow} transition-colors duration-300`}>
+        {member.name}
+      </h3>
     </div>
   );
 };
 
-export default ECellTeamPage;
+// Enhanced Team Section Component
+const TeamSection = ({ title, members, ribbonColor = "orange", isAssociate = false }) => {
+  if (!members || members.length === 0) return null;
+  
+  const getSectionIcon = (title) => {
+    if (title.includes('LEADERSHIP')) return Crown;
+    if (title.includes('HEADS')) return Shield;
+    if (title.includes('VICE')) return Star;
+    return Users;
+  };
+
+  const IconComponent = getSectionIcon(title);
+  
+  return (
+    <section className={`${isAssociate ? 'mb-16' : 'mb-24'}`}>
+      <div className="text-center mb-16">
+        <div className="flex items-center justify-center mb-6">
+          <IconComponent size={48} className="text-orange-400 mr-6" />
+          <h2 className="text-5xl md:text-6xl font-black text-white tracking-tighter">
+            {title}
+          </h2>
+          <IconComponent size={48} className="text-orange-400 ml-6" />
+        </div>
+        <div className="w-32 h-2 bg-gradient-to-r from-orange-500 via-amber-400 to-orange-500 mx-auto rounded-full"></div>
+      </div>
+      
+      {/* Centered Grid Layout */}
+      <div className="flex justify-center">
+        <div className={`grid ${isAssociate ? 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-8' : 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12'} px-4`}>
+          {members.map((member, index) => (
+            <CircularCard key={index} member={member} ribbonColor={ribbonColor} isAssociate={isAssociate} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+
+const TeamPage = () => {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">
+
+      <div 
+        className="absolute inset-0 opacity-10 animate-pulse"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)
+          `,
+          backgroundSize: '60px 60px',
+          animation: 'gridMove 20s linear infinite'
+        }}
+      />
+      
+   
+      <style jsx>{`
+        @keyframes gridMove {
+          0% { transform: translate(0, 0); }
+          100% { transform: translate(60px, 60px); }
+        }
+      `}</style>
+      
+
+      <div className="absolute top-0 left-0 w-full h-96 bg-gradient-to-b from-orange-500/10 via-amber-400/5 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-full h-96 bg-gradient-to-t from-purple-500/10 via-orange-500/5 to-transparent pointer-events-none" />
+      <div className="absolute top-1/2 left-0 w-full h-96 bg-gradient-to-r from-transparent via-amber-400/5 to-transparent pointer-events-none" />
+
+      <div className="absolute top-20 left-10 w-2 h-2 bg-orange-400 rounded-full animate-ping opacity-70"></div>
+      <div className="absolute top-40 right-20 w-3 h-3 bg-amber-400 rounded-full animate-pulse opacity-60"></div>
+      <div className="absolute bottom-32 left-1/4 w-2 h-2 bg-purple-400 rounded-full animate-bounce opacity-50"></div>
+
+      <div className="relative z-10 container mx-auto px-6 py-16">
+ 
+        <div className="text-center mb-32">
+          <div className="flex items-center justify-center mb-8">
+            <div className="w-20 h-1 bg-gradient-to-r from-transparent to-orange-500 mr-8"></div>
+            <Crown size={72} className="text-amber-400 mx-6 animate-pulse" />
+            <div className="w-20 h-1 bg-gradient-to-l from-transparent to-orange-500 ml-8"></div>
+          </div>
+          
+          <h1 className="text-7xl md:text-8xl lg:text-9xl font-black text-white mb-8 tracking-tighter bg-gradient-to-r from-white via-amber-200 to-white bg-clip-text text-transparent">
+            TEAM
+          </h1>
+          <div className="text-4xl md:text-5xl font-black text-transparent bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500 bg-clip-text mb-10 tracking-tight">
+            E-CELL
+          </div>
+          <div className="flex items-center justify-center mb-8">
+            <div className="w-24 h-1 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full"></div>
+            <div className="w-3 h-3 bg-amber-400 rounded-full mx-6"></div>
+            <div className="w-24 h-1 bg-gradient-to-l from-orange-500 to-amber-400 rounded-full"></div>
+          </div>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto font-medium leading-relaxed">
+            The innovators, creators, and entrepreneurs shaping tomorrow
+          </p>
+        </div>
+
+        <TeamSection 
+          title="LEADERSHIP" 
+          members={teamData.leadership}
+          ribbonColor="orange"
+        />
+        
+        <TeamSection 
+          title="HEADS" 
+          members={teamData.heads}
+          ribbonColor="orange"
+        />
+        
+        <TeamSection 
+          title="VICE HEADS" 
+          members={teamData.viceHeads}
+          ribbonColor="blue"
+        />
+        
+        <TeamSection 
+          title="ASSOCIATES" 
+          members={teamData.associates}
+          ribbonColor="purple"
+          isAssociate={true}
+        />
+      </div>
+    </div>
+  );
+};
+
+export default TeamPage;
