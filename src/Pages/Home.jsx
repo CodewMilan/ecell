@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import Navbar from '../components/Navbar/Navbar';
+
 import Hero from '../components/Hero/Hero';
 import About from '../components/About/About';
 import Events from '../components/Events/Events';
@@ -8,7 +8,6 @@ import Footer from '../components/Footer/Footer';
 
 const Home = () => {
   useEffect(() => {
-    
     const handleAnchorClick = (e) => {
       const href = e.currentTarget.getAttribute('href');
       if (href && href.startsWith('#')) {
@@ -38,15 +37,19 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="home-page">
-      <Navbar />
-      <Hero />
-      <About />
-      <Events />
-      <FailureStory />
-      <Footer />
-    </div>
+    <>
+   
+      
+      <div className="home-page">
+        <Hero />
+        <About />
+        <Events />
+        <FailureStory />
+        <Footer />
+      </div>
+    </>
   );
+
 };
 
 export default Home;

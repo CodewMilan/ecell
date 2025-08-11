@@ -100,7 +100,7 @@ const renderCardContent = (card) => {
         className={`absolute inset-0 ${roundedClass} ${shadowClass} transition-all duration-1000 ease-out ${getAnimationClasses(cardIndex)}`}
         style={{
           background: card.gradient,
-          boxShadow: isMobile ? '0 20px 40px -12px rgba(0, 0, 0, 0.25)' : '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
+          boxShadow: isMobile ? '0 20px 40px -12px rgba(255,255,255,0.15)' : '0 25px 50px -12px rgba(255,255,255,0.15)'
         }}
       >
         {renderCardContent(card, isMobile)}
@@ -114,38 +114,22 @@ const renderCardContent = (card) => {
 
   <motion.div 
         className="absolute inset-0 opacity-[0.15]"
-        animate={{ 
-          opacity: [0.12, 0.18, 0.12],
-          scale: [1, 1.02, 1]
-        }}
-        transition={{ 
-          duration: 6, 
-          repeat: Infinity, 
-          ease: "easeInOut" 
-        }}
+        
+        
         style={{
           backgroundImage: `
-            linear-gradient(rgba(19, 3, 3, 0.2) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(9, 2, 2, 0.2) 1px, transparent 1px)
+            linear-gradient(rgba(231, 231, 231, 0.8) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 251, 251, 0.8) 1px, transparent 1px)
           `,
-          backgroundSize: '25px 25px'
+          backgroundSize: '80px 80px'
         }}
       />
 
       {/* Secondary Grid Layer for Depth */}
       <motion.div 
         className="absolute inset-0 opacity-[0.08]"
-        animate={{ 
-          opacity: [0.05, 0.12, 0.05],
-          x: [0, 10, 0],
-          y: [0, 10, 0]
-        }}
-        transition={{ 
-          duration: 10, 
-          repeat: Infinity, 
-          ease: "easeInOut",
-          delay: 1
-        }}
+       
+        
         style={{
           backgroundImage: `
             linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px),
@@ -157,7 +141,7 @@ const renderCardContent = (card) => {
       
       {/* Enhanced moving gradient accent */}
       <motion.div 
-        className="absolute inset-0 opacity-[0.06]"
+        className="absolute inset-0 opacity-[0.4]"
         animate={{ 
           background: [
             'radial-gradient(circle at 20% 20%, rgba(255,255,255,0.15) 0%, transparent 60%)',
@@ -174,24 +158,7 @@ const renderCardContent = (card) => {
       />
 
       {/* Pulsing Grid Intersections */}
-      <motion.div 
-        className="absolute inset-0 opacity-[0.1]"
-        animate={{ 
-          opacity: [0.05, 0.15, 0.05]
-        }}
-        transition={{ 
-          duration: 4, 
-          repeat: Infinity, 
-          ease: "easeInOut",
-          delay: 2
-        }}
-        style={{
-          backgroundImage: `
-            radial-gradient(circle at 25px 25px, rgba(255,255,255,0.3) 1px, transparent 2px)
-          `,
-          backgroundSize: '25px 25px'
-        }}
-      />
+      
 
       {/* Logos Section - responsive positioning */}
       <nav className="flex justify-between items-center px-4 lg:px-8 pt-4">
